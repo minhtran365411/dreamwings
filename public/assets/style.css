@@ -1,0 +1,488 @@
+html {
+	width: 100%;
+	margin: 0 auto;
+}
+
+body {
+	font-family: 'Exo', sans-serif;
+	font-size: 1.2rem;
+}
+
+.container-fluid {
+	margin-bottom: 10%;
+}
+
+/*nav style*/
+
+#mainNav {
+	padding-top: 1%;
+}
+
+.fa-user {
+	color: #A0DB48 !important ;
+}
+
+
+.top-hori {
+	border-bottom: 5px solid #A0DB48;
+}
+
+.mid-hori {
+	border-bottom: 3px solid #A0DB48;
+	margin: 0 auto;
+	width: 60%;
+}
+
+/*This is style for FOOTER*/
+
+footer {
+	background: #74aa22;
+	color: white;
+}
+
+.foot {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+.sitemap {
+	padding-top: 3%;
+}
+
+.sitemap ul {
+	list-style: none;
+	color: white;
+}
+
+.sitemap a {
+	text-decoration: none;
+	color: white;
+}
+
+.sitemap ul li:hover{
+	font-size: 110%;
+	text-shadow: 2px 2px 4px #fff;
+}
+
+.logofooter {
+	padding-top: 5%;
+}
+
+i.fa {
+	font-size: 2em;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.2);
+	padding: 1% 3%;
+}
+
+.socialBtn {
+	padding-top: 3%;
+}
+
+
+/*This is style for home page*/
+
+.bigHeading {
+	line-height: 1.6;
+}
+
+#homeHead img {
+	max-width: 100%;
+	max-height: 100vh;
+	margin: auto;
+}
+
+#boxText {
+	width: 60% !important;
+	text-align: left !important;
+	margin: 0 auto;
+}
+
+#boxText li {
+	margin-bottom: 2%; 
+}
+
+
+.pageContent {
+	margin: 5% auto !important;
+	text-align: center;
+}
+
+.pageContent h1 {
+	color: #116EBF;
+}
+
+#introText {
+	width: 80%;
+	margin: 2% auto;
+}
+
+.teachingTech {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.techniques {
+	font-weight: bold;
+	color: #3E5B0D;
+}
+
+.carousel {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.carousel-inner{
+  width:100%;
+  max-height: 1000px !important;
+}
+
+.contact {
+	text-align: left !important;
+}
+
+.contactContent {
+	display: inline-block;
+}
+
+/*This is style for home page - TEACHERS*/
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+
+  display: grid; grid-template: 1fr / 1fr;
+  grid-template-areas: "frontAndBack";
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: white;
+  color: black;
+  grid-area: frontAndBack;
+}
+
+/* Style the back side */
+.flip-card-back {
+  color: black;
+  grid-area: frontAndBack;
+  transform: rotateY(180deg);
+}
+
+
+/* Style FOR CAC-KHOA-HOC */
+
+.tuyensinh {
+	width: 80%;
+	border-radius: 15px; 
+	background-color: #cc0000;
+}
+
+.tuyensinhContent {
+	text-align: left !important;
+	margin: 0 auto;
+	width: 70%;
+}
+
+.tuyensinhContent h3 {
+	margin-bottom: 3%;
+	color: white;
+}
+
+.circle {
+	background-color: #ffff1a;
+	color: black;
+	border-radius: 50%;
+	padding: 0 1.2%;
+}
+
+.lop-container {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.tenlop {
+	font-weight: bold;
+	color: #116EBF
+}
+
+.dotuoi {
+	color: #116EBF;
+}
+
+/* Style FOR LICH-THI */
+
+.readmorebutton {
+	float: right;
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+
+
+.linkedbutton {
+	font-weight: bold;
+	font-size: 2rem;
+}
+
+/* Style FOR tiêu chí dạy học */
+
+.card-title {
+	font-weight: bold;
+}
+
+
+
+/* Style tieuchi */
+
+.menulist {
+	border: 1px solid #116EBF;
+	border-radius: 15%;
+	padding: 5%;
+	width: 80%;
+	position: -webkit-sticky; /* Safari */
+ 	position: sticky;
+    top: 5%;
+    background-color: #d0e7fb;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   }
+
+/* Style FOR HOAT-DONG */
+
+#imageGallery {
+	width: 95%;
+	margin: 0 auto;
+}
+
+
+
+#options {
+	border-right: 4px solid #116EBF;
+	padding-right: 5%; 
+}
+
+.gallery img{
+	width: 100%;
+	height: 400px;
+}
+
+div.preview-images > img {
+        width: 30%;
+      }
+
+
+#imageBtn, #videoBtn {
+	padding: 0;
+	border: none;
+	background: none;
+	color: #116EBF;
+}
+
+#imageBtn:active, #videoBtn:active {
+	padding: 0;
+	border: none;
+	background: none;
+	color: #116EBF;
+}
+
+ a, a:hover, a:focus, a:active {
+      text-decoration: none;
+      color: inherit;
+ }
+
+  .albumDate {
+ 	text-transform: uppercase;
+	color: #808080;
+	font-size: 80%;
+	letter-spacing: .5em;
+	padding-top: 10px; 
+ }
+
+.albumCard {
+  transition: transform .2s; /* Animation */
+}
+
+.albumCard:hover {
+  transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+/* Style FOR TINTUC */
+
+ .blogContainer {
+ 	width: 80%;
+ 	margin: 2% auto;
+ 	margin-bottom: 8%;
+ }
+
+ .blogContent {
+ 	text-align: left;
+ }
+
+ p.lead {
+ 	font-style: italic !important;
+ 	font-size: 1.5rem !important;
+ }
+
+ .blogDate {
+ 	text-transform: uppercase;
+	font-weight: bold;
+	color: #808080;
+	letter-spacing: .8rem;
+	font-family: 'DM Mono', monospace;
+	padding-top: 10px; 
+ }
+
+ .blogReadMore {
+ 	float: right;
+ 	background-color: #bde67f;
+ 	padding: 2%;
+ 	border-radius: 25px;
+ 	text-transform: uppercase;
+ 	font-weight: bold;
+ }
+
+ .blogReadMore:hover {
+ 	color: white !important; 
+	background-color: #65951d;
+ }
+
+ .blogContainer {
+	box-shadow: 0px 0px 20px #f8f5ec;
+	font-family: 'Roboto Mono', monospace;
+	padding: 1%;
+}
+
+.backBtn {
+	background-color: #bde67f;
+ 	padding: 1%;
+ 	border-radius: 25px;
+ 	text-transform: uppercase;
+ 	font-weight: bold;
+ 	color: black !important;
+}
+
+.backBtn:hover {
+	color: white !important; 
+	background-color: #65951d;
+}
+
+.deleteBtn {
+	background-color: #ff4d4d;
+ 	padding: 7%;
+ 	border-radius: 25px;
+ 	text-transform: uppercase;
+ 	font-weight: bold;
+}
+.newscard .card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 20vw;
+    object-fit: cover;
+}
+
+.card-title {
+	color: #116EBF;
+}
+
+.textbox {
+	background-color: #ffd11a;
+	border: 5px dashed #b38f00;
+	padding: 2%;
+	border-radius: 15px;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.hoverimg:hover {
+	width: 90%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
+	transition: 0.3s;
+
+}
+
+.lineupImg {
+	border-radius: 15px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+div.card {
+  
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ 
+}
+
+@media only screen and (max-width: 800px) {
+  .featurevidTony {
+  	width: 420px;	
+  	height: 236.25px;
+  	margin: 0 auto;
+  }
+
+  body {
+	font-family: 'Exo', sans-serif;
+	font-size: 1rem;
+	}
+
+	/*This is style for FOOTER*/
+
+		.sitemap ul {
+			padding-left: 3%;
+		}
+
+		.foot {
+			width: 100%;
+			font-size: 0.8rem;
+			padding: 0 1%;
+		}
+
+		footer .col-4, footer .col-3 {
+			padding-right: 0 !important;
+			padding-left: 0 !important;
+		}
+
+		.logofooter {
+			padding-top: 8%;
+		}
+
+		i.fa {
+			font-size: 1em;
+			border-radius: 50%;
+			background: rgba(255, 255, 255, 0.2);
+		}
+
+		.socialBtn {
+			margin-left: 2%;
+		}
+
+
+}

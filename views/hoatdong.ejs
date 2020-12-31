@@ -1,0 +1,70 @@
+<%- include("partials/header") %>
+
+
+	<!-- WALLPAPER -->
+	
+	
+	<header id="homeHead" ><img src="images/hoatdongkiniem.jpg" size="100%"></header>
+
+
+	<div class="container-fluid mt-5">
+		
+		<section class="pageContent">
+			
+			<p id="introText">Nơi lưu trữ những khoảng khắc học tập đầy sáng tạo vui tươi với không khí hào hứng, trận cười thả ga của cô, thầy và trò của Dreamwings English. Những giờ học và làm việc nhóm với không khí cạnh tranh hào hứng, giúp các em phát triển ngôn ngữ qua nhiều phương diện.</p>
+		</section>
+
+	<hr class="mid-hori">
+
+	<% if(currentUser){ %>
+
+		<div style="width: 80%; margin: 2% auto;">
+			<div class="text-right">
+				<a class="btn backBtn my-4" href="/albummoi"><i class="fas fa-edit mr-2"></i>Thêm album mới</a>
+			</div>
+		</div>
+	<% } %>
+
+	<section class="pageContent">
+
+		<div style="width: 40%; margin: 5% auto;">
+			<h1>
+				<span id="options"><a href="/hoat-dong-ki-niem" class="galleryBtn">IMAGES</a></span>
+				<span style="padding-left: 3%;"><a href="/hoat-dong-ki-niem-videos" class="galleryBtn">VIDEOS</a></span>
+			</h1>
+		</div>
+
+		<div class="row" class="gallery" id="imageGallery">
+			<% albums.forEach(function(album) { %>
+				
+				<div class="col-md-6 col-lg-4 mb-3 d-flex align-items-center albumCard">
+
+					<div class="card">
+					  <a href="/hoat-dong-ki-niem/<%= album._id %>">
+					  		<img class="card-img-top" src="<%= album.imageURL %>" alt="Card image cap">
+					  </a>
+					  <div class="card-body">
+					  	<a href="/hoat-dong-ki-niem/<%= album._id %>">
+						    <p class="card-text h4"><b><%= album.title %></b></p>
+						</a>
+					    <p class="albumDate"><%= moment(album.createAt).format("LL") %></hp>
+					  </div>
+					</div>
+
+				</div>
+
+			<% }); %>
+			
+
+		</div>
+	
+
+	</section>
+	
+
+	<!-- xong r nek nha -->
+
+
+	</div>
+
+<%- include("partials/footer") %>

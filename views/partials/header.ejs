@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Minh Tran">
+	<meta name="discription" content="Dreamwings English website">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<base href="/">
+
+	   <!--  Font Awesome -->
+    <script src="https://kit.fontawesome.com/5c2493bbde.js" crossorigin="anonymous"></script>
+	
+	  <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    
+	<!-- font link -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo&display=swap" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="images/logo5.png"/>
+
+	<!-- Custom CSS -->
+	<link href="/assets/style.css" rel="stylesheet">
+
+	<title>Dreamwings English - <% if(url == "/") {%>
+					  				Trang Chủ
+					  	      <% } else if(url == "/cac-khoa-hoc") { %>
+					  	      		Các Khóa Học
+					  	      <% } else if(url == "/lich-thi") { %>
+					  	      		Lịch Thi và Các Nguồn Ôn Tập
+					  	      <% } else if(url == "/hoat-dong-ki-niem") { %>
+					  	      		Khoảng khắc Dreamwings - Hình Ảnh
+					  	      <% } else if(url == "/hoat-dong-ki-niem/videos") { %>
+					  	      		Khoảng khắc Dreamwings - Videos
+					  	      <% } else if(url == "/thong-tin-lien-lac") { %>
+					  	      		Liên Lạc Với Dreamwings
+					  	      <% } else if(url == "/login") { %>
+					  	      		Đăng nhập
+					  	      <% } else if(url == "/register") { %>
+					  	      		Đăng ký
+					  	      <% } else if(url == "/readingwithtony") { %>
+					  	      		Reading With Tony
+					  	      <% } else if(url == "/phongvan/Thu") { %>
+					  	      		Phỏng Vấn
+					  	      <% } else if(url == "/albummoi") { %>
+					  	      		Thêm Album Mới 
+					  	      <% } else if(url == "/loi-ich-hoc-tieng-anh-som") { %>
+					  	      		Lợi Ích Của Việc Học Tiếng Anh Sớm
+					  	      <% } else if(url == "/tintuc" || url == "/tintuc/new" ) { %>
+					  	      		Tin Tức Sự Kiện 
+					  	      <% } else { %>
+					  	      		Chấp Cánh Ước Mơ
+					  	      <% } %>
+					  		
+					  	</title>
+
+	<link rel="icon" type="image/ico" src="/images/dw-icon.png" />
+
+</head>
+
+<body>
+
+<!-- may change nav static-top to fixed-top later on -->
+	<div>
+	 <nav class="navbar navbar-expand-lg navbar-light static-top pb-0" id="mainNav">
+				  <a class="navbar-brand" href="/">
+					<img src="/images/dw-icon.png" width="50" height="50" alt="">
+				  </a>
+				   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				  </button>
+
+				  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+					<ul class="navbar-nav mr-auto">
+					  <li class="nav-item">
+						<a class="nav-link" href="/">TRANG CHỦ <span class="sr-only">(current)</span></a>
+					  </li>
+
+					   <li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  HỌC TẬP
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item display-5" href="/tieu-chi-day-hoc-DWE">Tiêu chí dạy học của trung tâm</a>
+						  <a class="dropdown-item display-5" href="/cac-khoa-hoc">Các khóa học</a>
+						  <a class="dropdown-item display-5" href="/lich-thi">Lịch thi & kiểm tra</a>
+						  <a class="dropdown-item display-5" href="/loi-ich-hoc-tieng-anh-som">Lợi ích của việc học tiếng Anh sớm</a>
+						</div>
+					  </li>
+					  
+					  <li class="nav-item">
+						<a class="nav-link" href="/hoat-dong-ki-niem">HOẠT ĐỘNG</a>
+					  </li>
+					  
+					   <li class="nav-item">
+						<a class="nav-link" href="/tintuc">TIN TỨC</a>
+					  </li>
+					  
+					  <li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  TÀI LIỆU
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						  <a class="dropdown-item display-5" href="/readingwithtony">Reading With Tony</a>
+						  <a class="dropdown-item display-5" href="#">Phỏng vấn Dreamwings</a>
+						  <a class="dropdown-item display-5" href="#">Chia sẻ tài liệu học online</a>
+						</div>
+					  </li>
+					  
+					 <li class="nav-item">
+						<a class="nav-link" href="/thong-tin-lien-lac">LIÊN LẠC</a>
+					  </li>
+
+					  </ul>
+
+					  <ul class="nav navbar-nav navbar-right signInNav">
+					  	<% if(!currentUser){ %>
+                        <li class="nav-item"><a class="nav-link" href="/login"><i class="fas fa-user" style="font-size: 1.8rem;"></i></a></li>
+	                    <% } else { %>
+	                        <li class="nav-item"><a href="#" class="nav-link">Signed In As <%= currentUser.username %></a></li>
+	                        <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+	                    <% } %>
+					  </ul>
+
+				  </div>
+				</nav>
+	</div>
+
+	<hr class="mt-2 top-hori">

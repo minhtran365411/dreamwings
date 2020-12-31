@@ -1,0 +1,108 @@
+<%- include("partials/header") %>
+
+
+	<!-- WALLPAPER -->
+	
+	
+	<header id="homeHead" ><img src="images/lienlac.jpg" size="100%"></header>
+
+
+	<div class="container-fluid mt-5">
+		
+		<section class="pageContent">
+		<div class="row">
+			<div class="col-lg-6 mb-4">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d979.8486119503544!2d106.67361182919254!3d10.78107099951989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ed7bd5e84a9%3A0x204218f372a7f769!2zNDYzLzE3IEPDoWNoIE3huqFuZyBUaMOhbmcgVMOhbSwgUGjGsOG7nW5nIDEzLCBRdeG6rW4gMTAsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1598617244575!5m2!1sen!2s" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+			</div>
+
+			<div class="col-lg-6">
+				<h1 class="bigHeading"><b>DREAMWINGS ENGLISH</b></h1>
+				<div class="contact mt-5 d-flex">
+					<p class="contactContent align-self-start"><i class="fas fa-home"></i> </p>
+					<p class="contactContent ml-3">463/17 Cách Mạng Tháng 8 <br/>Phường 13 Quận 10 <br/>Thành phố Hồ Chí Minh</p>
+				</div>
+				<div class="contact mt-2 d-flex">
+					<p class="contactContent align-self-start"><i class="fas fa-phone-alt"></i> </p>
+					<p class="contactContent ml-3">Cô Khanh:<br/>0903 67 42 68<br/>0968 00 46 25<br/>
+						Cô Quỳnh:<br/>0903 88 25 25</p>
+				</div>
+				
+			</div>
+			
+		</div>
+			
+
+		</section>
+
+	<hr class="mid-hori">
+
+		<section class="pageContent blogContainer">
+			
+			<form action="/thong-tin-lien-lac" method="post" name="thong-tin-lien-lac" enctype = "multipart/form-data" id="contact-form">
+			<div class="form-group">
+				<label for="name">Tên PHHS:</label>
+				<input type="text" class="form-control" id="name" name="ten" placeholder="Vui lòng nhập tên bạn ở đây" required>
+			  </div>
+
+			  <div class="form-group">
+				<label for="name">Số điện thoại liên lạc:</label>
+				<input type="number" class="form-control" id="name" name="sodienthoai" placeholder="Vui lòng nhập số điện thoại liên lạc của bạn ở đây" required>
+			  </div>
+			  
+			  <div class="form-group">
+				<label for="exampleFormControlTextarea1">Nội dung cần liên lạc:</label>
+				<textarea style="font-size: 24px;" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Nhập tại đây..." name="tinnhan" required></textarea>
+			  </div>
+			  <button class="btn backBtn" type="submit" value="submit">GỬI ĐƠN</button>
+			</form>
+
+
+		</section>
+
+	
+
+	
+
+	<!-- xong r nek nha -->
+
+
+	</div>
+
+	<footer>
+		<div class="row px-4">
+			<div class="col-md-4 p-4">
+				<img src="images/logo-DW-LOC-TRANG.png" class="img-fluid center" style="width: 80%;">
+			</div>
+			<div class="col-md-5 pt-5 pl-4 sitemap text-center">
+				<ul >
+					<li><a href="/">Giới thiệu về Dreamwings English</a></li>
+					<li><a href="/cac-khoa-hoc">Các khóa học</a></li>
+					<li><a href="/tintuc">Tin tức sự kiện</a></li>
+					<li><a href="#">Tài liệu học tập</a></li>
+					<li><a href="/readingwithtony">Reading with Tony</a></li>
+					<li><a href="/thong-tin-lien-lac">Liên hệ</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 pt-4">
+				<p class="contactContent mr-3"><a href="https://www.facebook.com/dreamwings.463/"><i class="fab fa-facebook fa-2x"></a></i></p>
+				<p class="contactContent"><a href="mailto:dreamwingsenglish@gmail.com"><i class="fas fa-envelope-open-text fa-2x"></a></i></p>
+				<div class="contact pt-2 d-flex">
+					<p class="contactContent align-self-start"><i class="fas fa-phone-alt"></i> </p>
+					<p class="contactContent ml-3">Cô Khanh:<br/>0903 67 42 68<br/>0968 00 46 25<br/>
+						Cô Quỳnh:<br/>0903 88 25 25</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- Optional JavaScript -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->   
+
+    <script src="js/jquery-3.5.1.js" ></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="js/bootstrap.min.js" ></script>
+	<script src="/assets/custom.js" ></script>
+
+
+</body>
+</html>

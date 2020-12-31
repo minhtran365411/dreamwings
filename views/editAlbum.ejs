@@ -1,0 +1,52 @@
+<%- include("partials/header") %>
+
+<!-- WALLPAPER -->
+	
+	
+	<header id="homeHead" ><img src="images/hoatdongkiniem.jpg" size="100%"></header>
+
+	<hr class="mid-hori">
+	  
+	<!-- MAIN -->
+	<div class="container mt-5">
+		 <div class="row">
+		 	<div class="col-12">
+		 		<h1 class="bigHeading">CẬP NHẬT THÔNG TIN ALBUM <%= album.title %></h1>
+
+		 	</div>
+	        
+	        <div class="col-12 blogContainer mt-3">
+	        	<div style="width: 80%; margin: 25px auto;" >
+
+				<form action="/hoat-dong-ki-niem/<%= album._id %>?_method=PUT" method="POST" class="my-5" enctype="multipart/form-data">
+
+					<div class="form-group">
+                    	<input class="form-control" type="text" name="album[title]" value="<%= album.title %>" >
+	                </div>
+
+	                <p>*Chọn 1 hình làm ảnh nền/đại diện/thumbnail cho album</p>
+	                <div class="form-group">
+	                     <input 
+	                	type="file" 
+	                	name="albumImage" 
+	                	id="input-files" 
+	                	class="form-control-file border"
+	                    />
+	                </div>
+
+
+	                <div class="form-group mt-5"  >
+	                    <button class="btn btn-lg backBtn btn-block">CẬP NHẬT ALBUM <%= album.title %></button>
+	                </div>
+
+				</form>
+
+				</div>
+	        </div>
+	        
+		</div>
+
+	</div>
+
+
+<%- include("partials/footer") %>

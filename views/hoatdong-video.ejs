@@ -1,0 +1,92 @@
+<%- include("partials/header") %>
+
+
+	<!-- WALLPAPER -->
+	
+	
+	<header id="homeHead" ><img src="images/hoatdongkiniem.jpg" size="100%"></header>
+
+
+	<div class="container-fluid mt-5">
+		
+		<section class="pageContent">
+			
+			<p id="introText">Gioi thieu mot chut ve nhung ki niem nhaaaa! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Sed risus ultricies tristique nulla aliquet enim. Suspendisse ultrices gravida dictum fusce ut placerat. Nibh tortor id aliquet lectus. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Felis bibendum ut tristique et egestas quis ipsum suspendisse. Ut venenatis tellus in metus vulputate eu. Sit amet nulla facilisi morbi tempus iaculis. Et ligula ullamcorper malesuada proin libero. Lacus sed viverra tellus in. </p>
+		</section>
+
+	<hr class="mid-hori">
+
+	<% if(currentUser){ %>
+
+	<section class="pageContent">
+
+		 
+	     <div class="container" style="margin: 0 auto; text-align: center;" id="videoUpload">
+	      
+
+	          <form class="mt-4"
+	           action="/hoat-dong-ki-niem-videos"
+	            method="POST"
+	            enctype="multipart/form-data"
+	          >
+	            <div class="form-group">
+	                <input 
+	                	type="file" 
+	                	name="video" 
+	                	multiple 
+	                	id= "input-multi-files"
+	                	class="form-control-file border"
+	                />
+	            </div>
+
+	            <button type="submit" class="btn btn-primary my-4" id="videoSubmit" >Submit</button>
+
+	          </form>
+
+	       
+
+	    </div>
+		
+
+	</section>
+
+	<hr class="mid-hori">
+
+	<% } %>
+
+	<section class="pageContent">
+
+		<div style="width: 40%; margin: 5% auto;">
+			<h1>
+				<span id="options"><a href="/hoat-dong-ki-niem" class="galleryBtn">IMAGES</a></span>
+				<span style="padding-left: 3%;"><a href="/hoat-dong-ki-niem/videos" class="galleryBtn">VIDEOS</a></span>
+			</h1>
+		</div>
+
+
+		<div class="row" class="gallery" id="videoGallery">
+			<% videos.forEach(function(video) { %>
+
+				<div class="col-lg-6 mb-3">
+					<video width="100%" height="auto" controls>
+					  <source src="<%= video.videoURL %>" type="video/mp4" class="img-fluid">
+					  <source src="<%= video.videoURL %>" type="video/ogg" class="img-fluid">
+					Your browser does not support the video tag.
+					</video>
+				</div>
+
+			<% }); %>
+			
+
+		</div>
+	
+
+	</section>
+	
+
+	<!-- xong r nek nha -->
+
+
+	</div>
+
+<%- include("partials/footer") %>

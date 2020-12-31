@@ -1,0 +1,168 @@
+<%- include("partials/header") %>
+
+
+	<!-- WALLPAPER -->
+	
+	
+	<header id="homeHead" ><img src="images/tintuc.jpg" size="100%"></header>
+
+
+	<div class="container-fluid mt-5">
+
+		<section class="pageContent" style="width: 80%;">
+			
+			<div class="row">
+				<div class="col-4 col-md-3">
+					<div class="card newscard" style="width: 18rem;">
+						<a href="/tieu-chi-day-hoc-DWE">
+						  <img class="card-img-top img-fluid" src="images/dw-icon.png" alt="Card image cap">
+						  <div class="card-body">
+						    <h5 class="card-title">Tiêu chí dạy học của trung tâm</h5>
+						  </div>
+						</a>
+					</div>
+				</div>
+
+				<div class="col-4 col-md-3">
+					<div class="card newscard" style="width: 18rem;">
+						<a href="/loi-ich-hoc-tieng-anh-som">
+						  <img class="card-img-top img-fluid" src="https://cdn.cdnparenting.com/articles/2018/07/712919656-H-768x525.jpg" alt="Card image cap">
+						  <div class="card-body">
+						    <h5 class="card-title">Lợi ích của việc học tiếng Anh sớm</h5>
+						  </div>
+						</a>
+					</div>
+				</div>
+
+				<div class="col-12 col-md-3 mb-4">
+					<div class="card newscard" >
+						<a href="/english-at-home">
+						  <img class="card-img-top img-fluid" src="https://image.freepik.com/free-vector/home-study-room-with-books_25030-38997.jpg" alt="Card image cap">
+						  <div class="card-body">
+						    <h5 class="card-title">Hướng dẫn học tiếng Anh tại nhà cho bé</h5>
+						  </div>
+						</a>
+					</div>
+				</div>
+				
+			</div>
+
+
+
+		</section>
+
+	<hr class="mid-hori">
+		
+		<section class="pageContent">
+			
+			<p id="introText">Nay la ve tin tuc ne nha. incididunt ut labore et dolore magna aliqua. Dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Sed risus ultricies tristique nulla aliquet enim. Suspendisse ultrices gravida dictum fusce ut placerat. Nibh tortor id aliquet lectus. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Felis bibendum ut tristique et egestas quis.</p>
+		</section>
+
+	<hr class="mid-hori">
+
+	<% if(currentUser){ %>
+
+		<div style="width: 80%; margin: 2% auto;">
+			<div class="text-right">
+				<a class="btn backBtn my-4" href="/tintuc/new"><i class="fas fa-edit mr-2"></i>Thêm bài tin tức mới</a>
+			</div>
+		</div>
+	<% } %>
+
+		<div id="blogMenu" class="my-5">
+			<!-- This is a place holder for menu to search thru blog posts -->
+			<!-- <div class="pagination"></div> -->
+
+			<nav aria-label="Page navigation">
+			    <% if (pages && pages > 0) { %>
+			    <ul class="pagination justify-content-center">
+			        <% if (current == 1) { %>
+			        <li class="page-item disabled"><a class="page-link">First</a></li>
+			        <% } else { %>
+			        <li><a class="page-link" href="/tintuc">First</a></li>
+			        <% } %>
+			 
+			        <% if (current == 1) { %>
+			        <li class="page-item disabled"><a class="page-link">«</a></li>
+			        <% } else { %>
+			        <li><a class="page-link" href="/tintuc?page=<%= Number(current) - 1 %>">«</a></li>
+			        <% } %>
+			 
+			        <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+			        <% if (i !== 1) { %>
+			        <li class="page-item disabled"><a class="page-link">...</a></li>
+			        <% } %>
+			        <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+			        <% if (i == current) { %>
+			        <li class="active"><a class="page-link"><%= i %></a></li>
+			        <% } else { %>
+			        <li><a class="page-link" href="/tintuc?page=<%= i %>"><%= i %></a></li>
+			        <% } %>
+			        <% if (i == Number(current) + 4 && i < pages) { %>
+			        <li class="page-item disabled"><a class="page-link">...</a></li>
+			        <% } %>
+			        <% } %>
+			 
+			        <% if (current == pages) { %>
+			        <li class="page-item disabled"><a class="page-link">»</a></li>
+			        <% } else { %>
+			        <li><a class="page-link" href="/tintuc?page=<%= Number(current) + 1 %>">»</a></li>
+			        <% } %>
+			 
+			        <% if (current == pages) { %>
+			        <li class="page-item disabled"><a class="page-link">Last</a></li>
+			        <% } else { %>
+			        <li><a class="page-link" href="/tintuc?page=<%= pages %>">Last</a></li>
+			        <% } %>
+			    </ul>
+			    <% } %>
+			</nav>
+
+			
+			
+		</div>
+
+	<section class="pageContent">
+		<div class="blogContainer">
+
+		<% blogs.forEach(function(blog) { %>
+		<div class="blogPost pt-4 pb-5">
+			<div class="row">
+				<div class="col-lg-4 d-flex align-items-center">
+					<img class="thumbnail img-fluid blogImage" src="<%= blog.imageURL %>" />
+				</div>
+
+				<div class="col-lg-8 blogContent">
+					<h5 class="blogDate"><%= moment(blog.createAt).format("dddd, MMMM Do YYYY") %></h5>
+						<h1 class="blogArticle mt-3"><%= blog.title %></h1>
+						<p class="lead"><%= blog.lead %></p>
+						
+						<div>
+							
+							<p>
+								<%= blog.text.substring(0, 300) %>...
+							</p>
+
+						<span class="blogReadMore"><a href="/tintuc/<%= blog._id %>">Đọc bài viết <i class="ml-2 fas fa-arrow-right"></i> </a></span>
+				</div>
+
+			</div>
+		</div>	
+			
+		</div>
+
+		<hr>
+
+		<% }); %>
+
+	
+		</div>
+	</section>
+	
+
+	<!-- xong r nek nha -->
+
+
+	</div>
+
+<%- include("partials/footer") %>
