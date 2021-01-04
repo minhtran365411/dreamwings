@@ -43,26 +43,26 @@
 
 		<section class="pageContent blogContainer">
 			
-			<form action="/thong-tin-lien-lac" method="post" name="thong-tin-lien-lac" enctype = "multipart/form-data" id="contact-form">
+			<form action="/thong-tin-lien-lac" method="post" name="contact-form" id="contact-form">
 			<div class="form-group">
 				<label for="name">Tên PHHS:</label>
-				<input type="text" class="form-control" id="name" name="ten" placeholder="Vui lòng nhập tên bạn ở đây" required>
+				<input type="text" class="form-control" id="ten" name="ten" placeholder="Vui lòng nhập tên bạn ở đây" required>
 			  </div>
 
 			    <div class="form-group">
 				    <label for="exampleInputEmail1">Email address</label>
-				    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập địa chỉ email">
+				    <input type="email" class="form-control" id="emailForm" name="emailForm" aria-describedby="emailHelp" placeholder="Nhập địa chỉ email">
 				    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 				</div>
 
 			  <div class="form-group">
 				<label for="name">Số điện thoại liên lạc:</label>
-				<input type="number" class="form-control" id="name" name="sodienthoai" placeholder="Vui lòng nhập số điện thoại liên lạc của bạn ở đây" required>
+				<input type="number" class="form-control" id="sodienthoai" name="sodienthoai" placeholder="Vui lòng nhập số điện thoại liên lạc của bạn ở đây" required>
 			  </div>
 			  
 			  <div class="form-group">
 				<label for="exampleFormControlTextarea1">Nội dung cần liên lạc:</label>
-				<textarea style="font-size: 24px;" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Nhập tại đây..." name="tinnhan" required></textarea>
+				<textarea style="font-size: 24px; white-space: pre-wrap;" class="form-control" id="tinnhan" rows="10" placeholder="Nhập tại đây..." name="tinnhan" required></textarea>
 			  </div>
 			  <button class="btn backBtn" type="submit" value="submit">GỬI ĐƠN</button>
 			</form>

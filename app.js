@@ -460,23 +460,39 @@ app.get("/thong-tin-lien-lac", function(req, res) {
 
 app.post("/thong-tin-lien-lac", function(req, res) {
 	var currenturl = req.url;
+	// const ten = req.body.name;
+	// const email =  req.body.exampleInputEmail1;
+	// const phone = req.body.sodienthoai;
+	// const tinnhan = req.body.tinnhan;
+
 
 	const auth = {
-        auth: {
-            api_key: '227OR7FW2SEJRJYF7BJV',
-            domain: 'https://dreamwingsenglish.com/'
-        }
+        host: 'smtp.gmail.com',
+		    port: 587,
+		    auth: {
+			    user: 'dreamwingsenglish@gmail.com',
+			    pass: 'HKGNS463'
+			  }
     };
 
     const transporter = nodemailer.createTransport(auth);
 
-    const sendMail = (ten, email, sodienthoai, tinnhan, cb) => {
-	    const mailOptions = {
-	        name: ten,
-	        email: email,
-	        phone: sodienthoai,
+    var content = '';
+    content += `
+        <div style="padding: 10px; background-color: #003375" width: 60%;>
+            <div style="padding: 10px; background-color: white;">
+                <h1 style="color: #0085ff; text-align: center; text-transform: uppercase; margin: 2% 0;">Thông tin liên lạc được gửi từ web Dreamwings English</h1>
+                <p style="color: black; font-size: 1.2rem; white-space: pre-wrap; line-height: 1.6; margin: 2% 10%;"><b>Tên:</b> ${req.body.ten}<br><b>Email:</b> ${req.body.emailForm}<br><b>Số điện thoại:</b> ${req.body.sodienthoai}<br><b>Nội dung:</b><br><br>${req.body.tinnhan}<br></p>
+            </div>
+        </div>
+    `;
+
+    const mailOptions = {
+    		from: '"Dreamwings English" <dreamwingsenglish@gmail.com>',
 	        to: 'dreamwingsenglish@gmail.com',
-	        text: tinnhan
+	        subject: 'Đơn liên lạc mới từ trang web Dreamwings English:',
+	        html: content
+	        // text: `Tên: ${req.body.ten}\nEmail: ${req.body.emailForm}\nSố điện thoại: ${req.body.sodienthoai}\nNội dung: ${req.body.tinnhan}`
 	    };
 
 	    transporter.sendMail(mailOptions, function(err, data) {
@@ -492,7 +508,8 @@ app.post("/thong-tin-lien-lac", function(req, res) {
 			      
 		        }
 	    });
-	}
+
+   
 
 
   });
