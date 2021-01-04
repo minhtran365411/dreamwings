@@ -12,7 +12,7 @@ var express 				= require("express"),
 require("dotenv").config();
 const cors = require("cors");
 const multiparty = require("multiparty");
-const mailGun = require('nodemailer-mailgun-transport');
+const mailGun = require('mailgun-nodemailer-transport');
 
 var cloudinary = require('cloudinary').v2;
 const multer = require("multer");
