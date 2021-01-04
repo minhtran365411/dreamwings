@@ -12,6 +12,7 @@ var express 				= require("express"),
 require("dotenv").config();
 const cors = require("cors");
 const multiparty = require("multiparty");
+const mailGun = require('nodemailer-mailgun-transport');
 
 var cloudinary = require('cloudinary').v2;
 const multer = require("multer");
@@ -456,65 +457,44 @@ app.get("/thong-tin-lien-lac", function(req, res) {
 	res.render("lienlac", {url: currenturl});
 });
 
+
 app.post("/thong-tin-lien-lac", function(req, res) {
 	var currenturl = req.url;
 
-	// Instantiate the SMTP server
-		  const smtpTrans = nodemailer.createTransport({
-		    host: 'smtp.gmail.com',
-		    port: 587,
-		    auth: {
-			    user: 'dreamwingsenglish@gmail.com',
-			    pass: 'HKGNS463',
-			  }
-		  });
+	const auth = {
+        auth: {
+            api_key: '227OR7FW2SEJRJYF7BJV',
+            domain: 'https://dreamwingsenglish.com/'
+        }
+    };
 
-		  // verify connection configuration
-			smtpTrans.verify(function (error, success) {
-			  if (error) {
-			    console.log(error);
-			  } else {
-			    console.log("Server is ready to take our messages");
-			  }
-			});
+    const transporter = nodemailer.createTransport(mailGun(auth));
 
-	 // let form = new multiparty.Form();
-		//   let data = {};
-		//   form.parse(req, function (err, fields) {
-		//     console.log(fields);
-		//     Object.keys(fields).forEach(function (property) {
-		//       data[property] = fields[property].toString();
-		//     });
-		   
+    const sendMail = (ten, email, sodienthoai, tinnhan, cb) => {
+	    const mailOptions = {
+	        Tên PHHS: ten,
+	        Email: email,
+	        Sđt: sodienthoai,
+	        to: 'dreamwingsenglish@email.com',
+	        Tin nhắn: tinnhan
+	    };
 
-		//     console.log(data);
-
-	 
-
-		  // Specify what the email will look like
-		  const mailOpts = {
-		    from: 'Dreamwings English Website',
-		    to: 'dreamwingsenglish@gmail.com',
-		    subject: 'Đơn liên lạc mới từ trang web Dreamwings English:',
-		    text: `Tên: ${req.body.ten} \nSố điện thoại: (${req.body.sodienthoai}) \n Nội dung: ${req.body.tinnhan}`
-		  };
-
-		  // Attempt to send the email
-		  smtpTrans.sendMail(mailOpts, (err, data) => {
-		    if (err) {
-		    	console.log(err);
+	    transporter.sendMail(mailOptions, function(err, data) {
+	        if (err) {
+	            console.log(err);
 		    	console.log(mailOpts);
-		      res.render('contact-failure', {url: currenturl}) // Show a page indicating failure
-		      // window.alert('Gửi thư thất bại, xin thử lại sau hoặc liên hệ số điện thoại: 0903674268.');
-		      
-		    }
-		    else {
-		    // window.alert('Đã gửi thư thành công! Chúng tôi sẽ liên hệ với bạn sớm nhất có thể.');
-		    console.log(mailOpts);
-		      res.render('contact-success', {url: currenturl}) // Show a page indicating success
-		      
-		    }
-    });
+			      res.render('contact-failure', {url: currenturl}) // Show a page indicating failure
+			      // window.alert('Gửi thư thất bại, xin thử lại sau hoặc liên hệ số điện thoại: 0903674268.');
+	        } else {
+	             // window.alert('Đã gửi thư thành công! Chúng tôi sẽ liên hệ với bạn sớm nhất có thể.');
+			    console.log(mailOpts);
+			      res.render('contact-success', {url: currenturl}) // Show a page indicating success
+			      
+		        }
+	    });
+	}
+
+
   });
 // });
 

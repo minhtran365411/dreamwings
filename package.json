@@ -16,6 +16,7 @@
     "express-session": "^1.17.1",
     "express-validator": "^6.7.0",
     "fs": "0.0.1-security",
+    "mailgun-nodemailer-transport": "^1.5.1",
     "method-override": "^3.0.0",
     "mime": "^2.4.6",
     "moment": "^2.26.0",
