@@ -475,7 +475,7 @@ app.post("/thong-tin-lien-lac", function(req, res) {
 	        name: ten,
 	        email: email,
 	        phone: sodienthoai,
-	        to: 'dreamwingsenglish@email.com',
+	        to: 'dreamwingsenglish@gmail.com',
 	        text: tinnhan
 	    };
 
