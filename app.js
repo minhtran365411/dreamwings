@@ -468,7 +468,7 @@ app.post("/thong-tin-lien-lac", function(req, res) {
         }
     };
 
-    const transporter = nodemailer.createTransport(mailGun(auth));
+    const transporter = nodemailer.createTransport(auth);
 
     const sendMail = (ten, email, sodienthoai, tinnhan, cb) => {
 	    const mailOptions = {
