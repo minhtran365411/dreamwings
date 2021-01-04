@@ -472,11 +472,11 @@ app.post("/thong-tin-lien-lac", function(req, res) {
 
     const sendMail = (ten, email, sodienthoai, tinnhan, cb) => {
 	    const mailOptions = {
-	        Tên PHHS: ten,
-	        Email: email,
-	        Sđt: sodienthoai,
+	        name: ten,
+	        email: email,
+	        phone: sodienthoai,
 	        to: 'dreamwingsenglish@email.com',
-	        Tin nhắn: tinnhan
+	        text: tinnhan
 	    };
 
 	    transporter.sendMail(mailOptions, function(err, data) {
