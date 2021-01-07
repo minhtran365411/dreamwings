@@ -509,6 +509,14 @@ div.card {
 			margin: 10% auto !important;
 		}
 
+		.noMargin {
+			margin-top: 0 !important;
+		}
+
+		.noMargin h3 {
+			font-size: 1rem;
+		}
+
 		.bigHeading {
 			font-size: 1.5rem;
 			margin-bottom: 3%;
@@ -582,6 +590,34 @@ div.card {
 
 		.tuyensinhContent h3 {
 			font-size: 0.8rem !important;
+		}
+
+		.flip-card-front, .flip-card-back {
+		  width: 100%;
+		  
+		  -webkit-backface-visibility: hidden; /* Safari */
+		}
+
+		/* STYLING FOR Tiêu chí dạy học .ejs */
+
+		.noMargin {
+			margin-top: 0 !important;
+		}
+
+		.noMargin h3 {
+			font-size: 1rem;
+		}
+
+		.tieuchi {
+			padding: 5% 2% !important;
+		}
+
+		.tieuchi ul {
+			width: 90%;
+		}
+
+		.tieuchi ul li {
+			margin-bottom: 5%;
 		}
 
 
