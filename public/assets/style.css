@@ -213,6 +213,14 @@ i.fa {
 
 /* Style FOR CAC-KHOA-HOC */
 
+	.smallText {
+		display: none;
+	}
+
+	.smallTextBigScreen {
+		display: block;
+	}
+
 .tuyensinh {
 	width: 80%;
 	border-radius: 15px; 
@@ -271,6 +279,10 @@ i.fa {
 	font-weight: bold;
 }
 
+	.loiich6 {
+		width: 60% !important;
+	}
+
 
 
 /* Style tieuchi */
@@ -290,6 +302,11 @@ i.fa {
 
 /* Style FOR HOAT-DONG */
 
+.hoatdong {
+	width: 40%; 
+	margin: 5% auto;
+}
+
 #imageGallery {
 	width: 95%;
 	margin: 0 auto;
@@ -297,7 +314,7 @@ i.fa {
 
 
 
-#options {
+.options {
 	border-right: 4px solid #116EBF;
 	padding-right: 5%; 
 }
@@ -618,6 +635,47 @@ div.card {
 
 		.tieuchi ul li {
 			margin-bottom: 5%;
+		}
+
+		/* STYLING FOR các lớp học .ejs */
+
+		.tenlop {
+			font-size: 1.2rem;
+		}
+
+		.dotuoi {
+			font-size: 1rem;
+		}
+
+		.smallTextBigScreen {
+			display: none;
+		}
+
+		.smallText {
+			display: block;
+		}
+
+		/* STYLING FOR lợi ích của việc học tiếng Anh sớm .ejs */
+
+		#linkLoiIch {
+			font-size: 1rem;
+		}
+
+		.loiich6 {
+			width: 100% !important;
+		}
+
+		.hoatdong {
+			width: 80% !important; 
+			margin-bottom: 10%;
+		}
+
+		.hoatdong h1 {
+			font-size: 1.2rem;
+		}
+
+		.options {
+			border-right: 2px solid #116EBF;
 		}
 
 
