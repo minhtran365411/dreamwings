@@ -194,6 +194,23 @@ i.fa {
 }
 
 
+/*styling for map*/
+
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
 /* Style FOR CAC-KHOA-HOC */
 
 .tuyensinh {
@@ -441,17 +458,20 @@ div.card {
  
 }
 
-@media only screen and (max-width: 800px) {
-  .featurevidTony {
-  	width: 420px;	
-  	height: 236.25px;
-  	margin: 0 auto;
-  }
+/* STYLING FOR PHONE INTERFACE */
 
-  body {
-	font-family: 'Exo', sans-serif;
-	font-size: 1rem;
-	}
+@media only screen and (max-width: 800px) {
+
+	  .featurevidTony {
+	  	width: 420px;	
+	  	height: 236.25px;
+	  	margin: 0 auto;
+	  }
+
+	  body {
+		font-family: 'Exo', sans-serif;
+		font-size: 0.8rem;
+		}
 
 	/*This is style for FOOTER*/
 
@@ -483,6 +503,91 @@ div.card {
 		.socialBtn {
 			margin-left: 2%;
 		}
+
+	/* STYLING FOR HOMEPAGE index.ejs */
+		.pageContent {
+			margin: 10% auto !important;
+		}
+
+		.bigHeading {
+			font-size: 1.5rem;
+			margin-bottom: 3%;
+		}
+
+		#introText {
+			width: 90%;
+			margin: 5% auto;
+		}
+
+		#boxText {
+			width: 80% !important;
+			margin: 2% auto;
+		}
+
+		.techniques {
+			font-size: 0.9rem;
+		}
+
+		.teachingTech {
+			font-size: 0.8rem;
+			width: 100%;
+		}
+
+
+		.teachingTech .col-4 {
+			padding-right: 0 ;
+			padding-left: 5%;
+		}
+
+		.teachingTech .col-4{
+			margin: auto 0;
+		}
+
+		.flip-card {
+			line-height: 0;
+		}
+
+		.flip-card-front h3, .flip-card-back h1 {
+			font-size: 1rem !important;
+		}
+
+		.flip-card-front .card-body {
+			padding: 1rem 0.5rem 0 0.5rem;
+		}
+
+		.flip-card-front .card-img-top {
+			height: 40vw;
+		}
+
+		.flip-card-back p {
+			font-size: 80%;
+			margin-top: 0.5rem !important;
+			margin-bottom: 0 !important;
+			line-height: 1rem;
+		}
+
+		/* styling for tuyensinh */
+
+		.tuyensinh {
+			width: 90%;
+		}
+
+		.tuyensinh .bigHeading h1{
+			font-size: 1rem !important;
+		}
+
+		.tuyensinhContent {
+			width: 80%;
+		}
+
+		.tuyensinhContent h3 {
+			font-size: 0.8rem !important;
+		}
+
+
+
+
+
 
 
 }
