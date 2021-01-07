@@ -9,11 +9,11 @@
 
 	<div class="container-fluid mt-5">
 
-		<section class="pageContent" style="width: 80%;">
+		<section class="pageContent" id="tintucHigh">
 			
 			<div class="row">
-				<div class="col-4 col-md-3">
-					<div class="card newscard" style="width: 18rem;">
+				<div class="col-6 col-md-3 mb-4">
+					<div class="card newscard">
 						<a href="/tieu-chi-day-hoc-DWE">
 						  <img class="card-img-top img-fluid" src="images/dw-icon.png" alt="Card image cap">
 						  <div class="card-body">
@@ -23,8 +23,8 @@
 					</div>
 				</div>
 
-				<div class="col-4 col-md-3">
-					<div class="card newscard" style="width: 18rem;">
+				<div class="col-6 col-md-3 mb-4">
+					<div class="card newscard" >
 						<a href="/loi-ich-hoc-tieng-anh-som">
 						  <img class="card-img-top img-fluid" src="https://cdn.cdnparenting.com/articles/2018/07/712919656-H-768x525.jpg" alt="Card image cap">
 						  <div class="card-body">
@@ -34,7 +34,7 @@
 					</div>
 				</div>
 
-				<div class="col-12 col-md-3 mb-4">
+				<div class="col-6 col-md-3 mb-4">
 					<div class="card newscard" >
 						<a href="/english-at-home">
 						  <img class="card-img-top img-fluid" src="https://image.freepik.com/free-vector/home-study-room-with-books_25030-38997.jpg" alt="Card image cap">
@@ -126,28 +126,37 @@
 		<div class="blogContainer">
 
 		<% blogs.forEach(function(blog) { %>
-		<div class="blogPost pt-4 pb-5">
+		<div class="blogPost pt-4 pb-5 px-2">
 			<div class="row">
-				<div class="col-lg-4 d-flex align-items-center">
-					<img class="thumbnail img-fluid blogImage" src="<%= blog.imageURL %>" />
+				<div class="col-4 d-flex align-items-center justify-content-center">
+					<img class="thumbnail img-fluid blogImage " src="<%= blog.imageURL %>" />
 				</div>
 
-				<div class="col-lg-8 blogContent">
+				<div class="col-8 blogContent">
 					<h5 class="blogDate"><%= moment(blog.createAt).format("dddd, MMMM Do YYYY") %></h5>
 						<h1 class="blogArticle mt-3"><%= blog.title %></h1>
-						<p class="lead"><%= blog.lead %></p>
+						<p class="lead blogLead"><%= blog.lead %></p>
 						
-						<div>
+						<div class="tintucBigScreen">
 							
 							<p>
 								<%= blog.text.substring(0, 300) %>...
 							</p>
 
 						<span class="blogReadMore"><a href="/tintuc/<%= blog._id %>">Đọc bài viết <i class="ml-2 fas fa-arrow-right"></i> </a></span>
-				</div>
+						</div>
 
-			</div>
-		</div>	
+				</div>
+				 	<div class="tintucSmallScreen">
+							
+							<p>
+								<%= blog.text.substring(0, 300) %>...
+							</p>
+
+						<span class="blogReadMore"><a href="/tintuc/<%= blog._id %>">Đọc bài viết <i class="ml-2 fas fa-arrow-right"></i> </a></span>
+					</div>
+			</div>	
+
 			
 		</div>
 

@@ -302,6 +302,11 @@ i.fa {
 
 /* Style FOR HOAT-DONG */
 
+#tintucHigh {
+	width: 80%;
+	margin: 0 auto;
+}
+
 .hoatdong {
 	width: 40%; 
 	margin: 5% auto;
@@ -365,6 +370,17 @@ div.preview-images > img {
 }
 
 /* Style FOR TINTUC */
+
+	.tintucSmallScreen {
+		display: none;
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.tintucBigScreen {
+		display: block;
+	}
+
 
  .blogContainer {
  	width: 80%;
@@ -474,6 +490,20 @@ div.card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  
 }
+
+/* Reading with tony */
+
+	.readingtonyintro {
+		width: 90%;
+	}
+
+/* Liên Lạc */
+	.formContact {
+		text-align: left !important;
+	}
+
+
+
 
 /* STYLING FOR PHONE INTERFACE */
 
@@ -665,6 +695,8 @@ div.card {
 			width: 100% !important;
 		}
 
+		/* STYLING FOR hoạt động .ejs */
+
 		.hoatdong {
 			width: 80% !important; 
 			margin-bottom: 10%;
@@ -677,6 +709,80 @@ div.card {
 		.options {
 			border-right: 2px solid #116EBF;
 		}
+
+		/* STYLING FOR tin tức .ejs */
+
+		#tintucHigh {
+			width: 90% !important;
+		}
+
+		.newscard h5{
+			font-size: 0.8rem;
+		} 
+
+		.newscard .card-img-top{
+			height: 25vw;
+		} 
+
+		.newscard .card-body{
+			padding: 0.8rem 0.5rem;
+		}  
+
+		.newscard .card-title {
+			margin-bottom: 0;
+		} 
+
+		 .blogDate {
+			letter-spacing: .1rem;
+			font-size: 0.6rem;
+		 }
+
+		 .blogArticle {
+		 	font-size: 1.2rem;
+		 }
+
+		 p.blogLead {
+		 	font-size: 0.7rem !important;
+		 }
+
+/*		 .blogReadMore {
+		 	float: right;
+		 	background-color: #bde67f;
+		 	padding: 2%;
+		 	border-radius: 25px;
+		 	text-transform: uppercase;
+		 	font-weight: bold;
+		 }
+
+		 .blogReadMore:hover {
+		 	color: white !important; 
+			background-color: #65951d;
+		 }*/
+
+		 .blogContent {
+			padding: 1% 0;
+		}
+
+		.blogContainer {
+			width: 90%;
+		}
+
+		.tintucSmallScreen {
+			display: block;
+		}
+
+		.tintucBigScreen {
+			display: none;
+		}
+
+		/* Styling for reading with tony */
+
+		.readingtonyintro {
+			width: 100%;
+			margin: 0 auto;
+		}
+
+
 
 
 
