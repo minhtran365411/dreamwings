@@ -229,6 +229,13 @@ app.get("/tieu-chi-day-hoc-DWE", function(req, res) {
 	res.render("tieuchidayhoc", {url: currenturl});
 });
 
+//thi cambridge page
+
+app.get("/thi-chung-chi-cambridge", function(req, res) {
+	var currenturl = req.url;
+	res.render("thicambridge", {url: currenturl});
+});
+
 
 //tiếng anh tại nhà
 app.get("/english-at-home", function(req, res) {

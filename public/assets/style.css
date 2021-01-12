@@ -191,7 +191,10 @@ i.fa {
   color: black;
   grid-area: frontAndBack;
   transform: rotateY(180deg);
+  overflow: auto;
+  margin-top: 2%;
 }
+
 
 
 /*styling for map*/
@@ -252,7 +255,7 @@ i.fa {
 
 .tenlop {
 	font-weight: bold;
-	color: #116EBF
+	color: #116EBF;
 }
 
 .dotuoi {
@@ -619,6 +622,10 @@ div.card {
 			margin-top: 0.5rem !important;
 			margin-bottom: 0 !important;
 			line-height: 1rem;
+		}
+
+		.quote {
+			display: none;
 		}
 
 		/* styling for tuyensinh */
