@@ -138,6 +138,13 @@ i.fa {
   max-height: 1000px !important;
 }
 
+#carouselExampleControls a.carousel-control {
+
+width: 80px;
+background: #404040;
+
+}
+
 .contact {
 	text-align: left !important;
 }
@@ -462,6 +469,12 @@ div.preview-images > img {
     object-fit: cover;
 }
 
+.card-img-online {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
 .card-title {
 	color: #116EBF;
 }
@@ -505,7 +518,49 @@ div.card {
 		text-align: left !important;
 	}
 
+/* Trang YOUTUBE -online resource */
 
+.yt-card {
+	margin-bottom: 5%;
+}
+
+#menu-online {
+	border-right: 3px solid #74aa22;
+}
+
+.items-level {
+	border-bottom: 1px solid #e6e6e6;
+	padding-bottom: 3%;
+	box-shadow: 0 4px 2px -2px #e6e6e6;
+}
+
+.yt-card .tooltiptext {
+  visibility: hidden;
+  width: 150%;
+  background-color: white;
+  border: 1px solid #74aa22;
+  border-radius: 15px;
+  padding: 5%;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 20%;
+  left: 60%;
+}
+
+.yt-card:hover .tooltiptext {
+  visibility: visible;
+  cursor: pointer;
+}
+
+.tip2 {
+	left: -30% !important;
+}
+
+.tip3 {
+	left: -50% !important;
+}
 
 
 /* STYLING FOR PHONE INTERFACE */
@@ -794,9 +849,31 @@ div.card {
 				font-family: 'Exo', sans-serif;
 			}
 
+			/*style for onlineresource*/
+
+		#menu-online {
+			border-right: 0px;
+		}
 
 
+		.yt-card .tooltiptext {
+		top:0%;
+		border: 0px;
+		 visibility: visible;
+		 width: 100%;
+		  /* Position the tooltip */
+  		position: static;
+  		z-index: 0;
+  		padding: 0% 3% 3% 3%;
+		}
 
+		.tooltiptext .card-title {
+			display: none;
+		}
+
+		.card-body {
+			padding-bottom: 2% !important;
+		}
 
 
 

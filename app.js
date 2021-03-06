@@ -243,6 +243,12 @@ app.get("/english-at-home", function(req, res) {
 	res.render("tienganhtainha", {url: currenturl});
 });
 
+//tiếng anh tại nhà
+app.get("/online-resource/yt", function(req, res) {
+	var currenturl = req.url;
+	res.render("online-resource-yt", {url: currenturl});
+});
+
 //PAGE hoat dong, memories hinh anh - from here
 
 //new album
