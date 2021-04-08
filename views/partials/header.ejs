@@ -17,41 +17,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Exo&display=swap" rel="stylesheet">
 
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/png" href="images/logo5.png"/>
+    <link rel="shortcut icon" type="image/png" href="images/logo4.png"/>
 
 	<!-- Custom CSS -->
 	<link href="/assets/style.css" rel="stylesheet">
 
-	<title>DWE - Dream Wings English - <% if(url == "/") {%>
-					  				Trang Chủ
-					  	      <% } else if(url == "/cac-khoa-hoc") { %>
-					  	      		Các Khóa Học
-					  	      <% } else if(url == "/lich-thi") { %>
-					  	      		Lịch Thi và Các Nguồn Ôn Tập
-					  	      <% } else if(url == "/hoat-dong-ki-niem") { %>
-					  	      		Khoảng khắc Dreamwings - Hình Ảnh
-					  	      <% } else if(url == "/hoat-dong-ki-niem/videos") { %>
-					  	      		Khoảng khắc Dreamwings - Videos
-					  	      <% } else if(url == "/thong-tin-lien-lac") { %>
-					  	      		Liên Lạc Với Dreamwings
-					  	      <% } else if(url == "/login") { %>
-					  	      		Đăng nhập
-					  	      <% } else if(url == "/register") { %>
-					  	      		Đăng ký
-					  	      <% } else if(url == "/readingwithtony") { %>
-					  	      		Reading With Tony
-					  	      <% } else if(url == "/online-resource/*") { %>
-					  	      		Tài liệu trên mạng
-					  	      <% } else if(url == "/phongvan/Thu") { %>
-					  	      		Phỏng Vấn
-					  	      <% } else if(url == "/albummoi") { %>
-					  	      		Thêm Album Mới 
-					  	      <% } else if(url == "/loi-ich-hoc-tieng-anh-som") { %>
-					  	      		Lợi Ích Của Việc Học Tiếng Anh Sớm
-					  	      <% } else if(url == "/tintuc" || url == "/tintuc/new" ) { %>
-					  	      		Tin Tức Sự Kiện 
+	<title>DWE |  <% if(url == "/") {%>
+								Dream Wings English | Trang Chủ
 					  	      <% } else { %>
-					  	      		Chấp Cánh Ước Mơ
+								<%- title%>
 					  	      <% } %>
 					  		
 					  	</title>
@@ -64,7 +38,7 @@
 
 <!-- may change nav static-top to fixed-top later on -->
 	<div>
-	 <nav class="navbar navbar-expand-lg navbar-light static-top pb-0" id="mainNav">
+	 <nav class="navbar navbar-expand-lg navbar-light fixed-top pb-0 stroke" id="mainNav">
 				  <a class="navbar-brand" href="/">
 					<img src="/images/dw-icon.png" width="50" height="50" alt="">
 				  </a>
@@ -80,10 +54,10 @@
 					  </li>
 
 					   <li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						  HỌC TẬP
 						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<div class="dropdown-menu mt-1" aria-labelledby="navbarDropdownMenuLink">
 						  <a class="dropdown-item display-5" href="/cac-khoa-hoc">Các khóa học</a>
 						  <a class="dropdown-item display-5" href="/lich-thi">Lịch thi & kiểm tra</a>
 						  <a class="dropdown-item display-5" href="/thi-chung-chi-cambridge">Thông tin về các kì thi chứng chỉ Cambridge</a>
@@ -104,10 +78,10 @@
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						  TÀI LIỆU
 						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<div class="dropdown-menu mt-1" aria-labelledby="navbarDropdownMenuLink">
 						  <a class="dropdown-item display-5" href="/readingwithtony">Reading With Tony</a>
 						 <!--  <a class="dropdown-item display-5" href="#">Phỏng vấn Dreamwings</a> -->
-						  <!-- <a class="dropdown-item display-5" href="online-resource/yt">Những kênh youtube bổ ích</a> -->
+						  <a class="dropdown-item display-5" href="online-resource/yt">Những kênh youtube bổ ích</a>
 						</div>
 					  </li>
 					  
@@ -130,4 +104,4 @@
 				</nav>
 	</div>
 
-	<hr class="mt-2 top-hori">
+	<hr class="mt-5 top-hori">

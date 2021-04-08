@@ -9,14 +9,14 @@
 
 	<div class="container-fluid mt-5">
 
-		<!-- đăng bài mới -->
+	<!-- đăng bài mới -->
 
-		<% if(currentUser){ %>
+	<% if(currentUser){ %>
 
-		<section >
-		
+	<section >
+
 		<!-- Button trigger modal -->
-		<div style="width: 90%; font-weight: bold; " class="text-right">
+		<div style="width: 90%; font-weight: bold; margin: 0 auto;" class="text-right">
 		<button style="font-size: 2rem;" type="button" class="btn backBtn " data-toggle="modal" data-target="#exampleModalCenter">
 			<i class="fas fa-edit mr-2"></i>Thêm bài mới
 		</button>
@@ -108,7 +108,7 @@
 		<div class="row">
 			
 			<div id="menu-online" class="col-md-3" >
-				
+
 				<a href="/online-resource/yt">
 					<p class="items-level">ALL LEVELS
 					<svg class="svgGreenArrow" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
@@ -128,7 +128,7 @@
 					</p>
 					  
 				</a>
-
+				
 				<a href="/online-resource/yt/Pre-Starters">
 					<p class="items-level">Pre-Starters
 					<svg class="svgGreenArrow" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
@@ -227,248 +227,70 @@
 			</div>
 
 			<div class="col-md-9" style="padding: 0 2%;">
+                
+				<% if (level) { %>
+               	 <h3 class="resourceTitle"><%= level%></h3>
+				<% } %>
 
-				<div class="levelSection" >
-				<!-- Pre-Starter Level -->
-				<a href="/online-resource/yt/Pre-Starters"><h3 class="resourceTitle">Pre-Starters (3 - 6 tuổi)</h3></a>
+                <div class="my-4"  oncontextmenu='return false' class='snippet-body'>
+                <div class="row">
 
-				
+					<% onlineResources.forEach(function(onlineResource) { %>
+                    <div class="col-6">
+                    <div class="product mb-4">
+						<a href="<%= onlineResource.link %>">
+                        <div class="imgbox"> <img class="img-fluid" src="<%= onlineResource.imageSrc %>"> </div>
+                          
+                        <div class="specifies">
+                            <h5 class="card-title"><%= onlineResource.pageName %>
 
-				<!-- Top content -->
-				<div class="top-content my-4">
-					
-						<div id="carousel-example" class="carousel slide" data-ride="carousel" style="width: 100%;">
-							<div class="carousel-inner row w-100 mx-auto" role="listbox">
-								<% onlineResources.forEach(function(onlineResource) { %>
-				
-								<% if (onlineResource.levelCambridge === "Pre-Starters") { %>
-								<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 ">
-									<a target="_blank" href="<%= onlineResource.link %>">
-									<img src="<%= onlineResource.imageSrc %>" class="img-fluid mx-auto d-block card-img" alt="img">
-									<div class="card-img-overlay d-flex align-items-end ">
-										<h5 class="card-title-name "><%= onlineResource.pageName %></h5>
-									</div>
-									</a>
-								</div>
+								<% if (onlineResource.difficultyRating == '1' ) { %>
 
-								<% } %>
+                                <svg class="starRating1" xmlns="http://www.w3.org/2000/svg" width="62.526" height="16.2" viewBox="0 0 62.526 16.2">
+                                    <g id="Group_36" data-name="Group 36" transform="translate(-277.474 -466)">
+                                      <path id="Path_159" data-name="Path 159" d="M8.526,0l2.664,5.329,5.862.853-4.263,4.157.959,5.862L8.526,13.429,3.3,16.2l.959-5.862L0,6.182l5.862-.853Z" transform="translate(277.474 466)" fill="#2699fb"/>
+                                      <path id="Path_160" data-name="Path 160" d="M8.526,0l2.664,5.329,5.862.853-4.263,4.157.959,5.862L8.526,13.429,3.3,16.2l.959-5.862L0,6.182l5.862-.853Z" transform="translate(300.211 466)" fill="#7f7f7f" opacity="0.5"/>
+                                      <path id="Path_161" data-name="Path 161" d="M8.526,0l2.664,5.329,5.862.853-4.263,4.157.959,5.862L8.526,13.429,3.3,16.2l.959-5.862L0,6.182l5.862-.853Z" transform="translate(322.947 466)" fill="#7f7f7f" opacity="0.5"/>
+                                    </g>
+                                  </svg>
 
-								<% }); %>
-								
-								
-							</div>
+								  <% } else if (onlineResource.difficultyRating == '2' ) { %>
+                                
+                                  <svg class="starRating2" xmlns="http://www.w3.org/2000/svg" width="62.526" height="16.2" viewBox="0 0 62.526 16.2">
+                                    <g id="Group_36" data-name="Group 36" transform="translate(-277.474 -466)">
+                                      <path id="Path_159" data-name="Path 159" d="M8.526,0l2.664,5.329,5.862.853-4.263,4.157.959,5.862L8.526,13.429,3.3,16.2l.959-5.862L0,6.182l5.862-.853Z" transform="translate(277.474 466)" fill="#2699fb"/>
+                                      <path id="Path_160" data-name="Path 160" d="M8.526,0l2.664,5.329,5.862.853-4.263,4.157.959,5.862L8.526,13.429,3.3,16.2l.959-5.862L0,6.182l5.862-.853Z" transform="translate(300.211 466)" fill="#2699fb"/>
+                                      <path id="Path_161" data-name="Path 161" d="M8.526,0l2.664,5.329,5.862.853-4.263,4.157.959,5.862L8.526,13.429,3.3,16.2l.959-5.862L0,6.182l5.862-.853Z" transform="translate(322.947 466)" fill="#7f7f7f" opacity="0.5"/>
+                                    </g>
+                                  </svg>
 
-							<a style="width: 5% !important; background: #a8a8a8;" class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="sr-only">Previous</span>
-							</a>
-							<a style="width: 5% !important; background: #a8a8a8;" class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="sr-only">Next</span>
-							</a>
-						</div>
-					
-				</div>	
+								  <% } else if (onlineResource.difficultyRating == '3' ) { %>
 
-				
+                                  <svg class="starRating3" xmlns="http://www.w3.org/2000/svg" width="62.526" height="16.2" viewBox="0 0 62.526 16.2">
+                                    <g id="Group_36" data-name="Group 36" transform="translate(-277.474 -466)">
+                                      <path id="Path_159" data-name="Path 159" d="M8.526,0l2.664,5.329,5.862.853-4.263,4.157.959,5.862L8.526,13.429,3.3,16.2l.959-5.862L0,6.182l5.862-.853Z" transform="translate(277.474 466)" fill="#2699fb"/>
+                                      <path id="Path_160" data-name="Path 160" d="M8.526,0l2.664,5.329,5.862.853-4.263,4.157.959,5.862L8.526,13.429,3.3,16.2l.959-5.862L0,6.182l5.862-.853Z" transform="translate(300.211 466)" fill="#2699fb"/>
+                                      <path id="Path_161" data-name="Path 161" d="M8.526,0l2.664,5.329,5.862.853-4.263,4.157.959,5.862L8.526,13.429,3.3,16.2l.959-5.862L0,6.182l5.862-.853Z" transform="translate(322.947 466)" fill="#2699fb"/>
+                                    </g>
+                                  </svg>
 
-				</div>
+								  <% } %>
 
-				<div class="levelSection" >
+                            </h5>
+                            <p class="card-text"><%= onlineResource.text %></p>
+                        </div>
+						</a>
+                    </div>
+                    </div>
 
-				<!-- Starters - Movers -->
+                    <% }); %>
 
-				<a href="/online-resource/yt/Starters-Movers"><h3 class="resourceTitle">Starters - Movers (6 - 13 tuổi)</h3></a>
-
-				<!-- Top content -->
-				<div class="top-content my-4">
-					
-						<div id="carousel-example" class="carousel slide" data-ride="carousel" style="width: 100%;">
-							<div class="carousel-inner row w-100 mx-auto" role="listbox">
-								<% onlineResources.forEach(function(onlineResource) { %>
-				
-								<% if (onlineResource.levelCambridge === "Starters - Movers") { %>
-								<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 ">
-									<a target="_blank" href="<%= onlineResource.link %>">
-									<img src="<%= onlineResource.imageSrc %>" class="img-fluid mx-auto d-block card-img" alt="img">
-									<div class="card-img-overlay d-flex align-items-end ">
-										<h5 class="card-title-name "><%= onlineResource.pageName %></h5>
-									</div>
-									</a>
-								</div>
-								<% } %>
-
-								<% }); %>
-								
-								
-							</div>
-
-							<a style="width: 5% !important; background: #a8a8a8;" class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="sr-only">Previous</span>
-							</a>
-							<a style="width: 5% !important; background: #a8a8a8;" class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="sr-only">Next</span>
-							</a>
-						</div>
-					
-				</div>	
+                </div>
+            </div>
 
 				
 
-			</div>
-
-			<div class="levelSection" >
-				
-				<!-- Flyers - KET - PET -->
-
-				<a href="/online-resource/yt/Flyers-KET-PET"><h3 class="resourceTitle">Flyers - KET - PET (11 - 15 tuổi)</h3></a>
-
-
-				<!-- Top content -->
-				<div class="top-content my-4">
-					
-						<div id="carousel-example" class="carousel slide" data-ride="carousel" style="width: 100%;">
-							<div class="carousel-inner row w-100 mx-auto" role="listbox">
-
-								<% onlineResources.forEach(function(onlineResource) { %>
-				
-								<% if (onlineResource.levelCambridge === "Flyers - KET - PET") { %>
-
-								<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 ">
-									<a target="_blank" href="<%= onlineResource.link %>">
-									<img src="<%= onlineResource.imageSrc %>" class="img-fluid mx-auto d-block card-img" alt="img">
-									<div class="card-img-overlay d-flex align-items-end ">
-										<h5 class="card-title-name "><%= onlineResource.pageName %></h5>
-									</div>
-									</a>
-								</div>
-								
-								<% } %>
-
-								<% }); %>
-								
-								
-							</div>
-
-							<a style="width: 5% !important; background: #a8a8a8;" class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="sr-only">Previous</span>
-							</a>
-							<a style="width: 5% !important; background: #a8a8a8;" class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="sr-only">Next</span>
-							</a>
-						</div>
-					
-				</div>	
-
-
-
-			</div>
-
-			<div class="levelSection" >
-
-
-				<!-- FCE -->
-
-				<a href="/online-resource/yt/FCE"><h3 class="resourceTitle">FCE (15 - 18 tuổi)</h3></a>
-
-
-				<!-- Top content -->
-				<div class="top-content my-4">
-					
-						<div id="carousel-example" class="carousel slide" data-ride="carousel" style="width: 100%;">
-							<div class="carousel-inner row w-100 mx-auto" role="listbox">
-
-								<% onlineResources.forEach(function(onlineResource) { %>
-				
-								<% if (onlineResource.levelCambridge === "FCE") { %>
-					
-								<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 ">
-									<a target="_blank" href="<%= onlineResource.link %>">
-									<img src="<%= onlineResource.imageSrc %>" class="img-fluid mx-auto d-block card-img" alt="img">
-									<div class="card-img-overlay d-flex align-items-end ">
-										<h5 class="card-title-name "><%= onlineResource.pageName %></h5>
-									</div>
-									</a>
-								</div>
-
-								<% } %>
-
-								<% }); %>
-								
-								
-							</div>
-
-							<a style="width: 5% !important; background: #a8a8a8;" class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="sr-only">Previous</span>
-							</a>
-							<a style="width: 5% !important; background: #a8a8a8;" class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="sr-only">Next</span>
-							</a>
-						</div>
-					
-				</div>	
-
-
-
-			</div>
-
-			<div class="levelSection" >
-
-				<!-- IELTS -->
-
-				<a href="/online-resource/yt/IELTS"><h3 class="resourceTitle">IELTS (18 tuổi trở lên)</h3></a>
-
-
-				<!-- Top content -->
-				<div class="top-content my-4">
-					
-						<div id="carousel-example" class="carousel slide" data-ride="carousel" style="width: 100%;">
-							<div class="carousel-inner row w-100 mx-auto" role="listbox">
-
-								<% onlineResources.forEach(function(onlineResource) { %>
-				
-								<% if (onlineResource.levelCambridge === "IELTS") { %>
-
-								<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 ">
-									<a target="_blank" href="<%= onlineResource.link %>">
-									<img src="<%= onlineResource.imageSrc %>" class="img-fluid mx-auto d-block card-img" alt="img">
-									<div class="card-img-overlay d-flex align-items-end ">
-										<h5 class="card-title-name "><%= onlineResource.pageName %></h5>
-									</div>
-									</a>
-								</div>
-
-								<% } %>
-
-								<% }); %>
-								
-								
-							</div>
-
-							<a style="width: 5% !important; background: #a8a8a8;" class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="sr-only">Previous</span>
-							</a>
-							<a style="width: 5% !important; background: #a8a8a8;" class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="sr-only">Next</span>
-							</a>
-						</div>
-					
-				</div>	
-
-			
-
-
-			</div>
-
-		</div>
+		    </div>
 
 	</section>
 

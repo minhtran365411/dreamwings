@@ -32,12 +32,14 @@ var Video = require("./models/video");
 var Blog = require("./models/blog");
 var User = require("./models/user");
 var Album = require("./models/album");
+var OnlineResource = require("./models/onlineResource");
 
 
 
 var app = express();
 // cors
 app.use(cors({ origin: "*" }));
+
 app.use(bodyParser.json());
 
 
@@ -54,6 +56,8 @@ mongoose.connect('mongodb+srv://minhtran:Hotngong123@dreamwings.oyzpv.mongodb.ne
 app.set("view engine", "ejs");
 app.locals.moment = require("moment");
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());   
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
 
@@ -144,7 +148,7 @@ app.get("/", function(req, res) {
 // show register form
 app.get("/register", function(req, res){
 	var currenturl = req.url;
-   res.render("register", {url: currenturl}); 
+   res.render("register", {url: currenturl,  title:'Đăng ký Admin'}); 
 });
 
 //handle sign up logic
@@ -154,7 +158,7 @@ app.post("/register", function(req, res){
     User.register(newUser, req.body.password, function(err, user){
         if(err){
             console.log(err);
-            return res.render("register", {url: currenturl});
+            return res.render("register", {url: currenturl, title:'Đăng ký Admin'});
         }
         passport.authenticate("local")(req, res, function(){
            console.log("Successfully Signed Up! Nice to meet you " + req.body.username);
@@ -167,7 +171,7 @@ app.post("/register", function(req, res){
 
 app.get("/login", function(req, res) {
 	var currenturl = req.url;
-	res.render("login", {url: currenturl});
+	res.render("login", {url: currenturl, title:'Đăng Nhập Admin'});
 });
 
 //handling login logic
@@ -191,7 +195,7 @@ app.get("/logout", function(req, res){
 
 app.get("/cac-khoa-hoc", function(req, res) {
 	var currenturl = req.url;
-	res.render("caclop", {url: currenturl});
+	res.render("caclop", {url: currenturl, title:'Các khóa học ở Dream Wings English'});
 });
 
 
@@ -200,7 +204,7 @@ app.get("/cac-khoa-hoc", function(req, res) {
 
 app.get("/lich-thi", function(req, res) {
 	var currenturl = req.url;
-	res.render("lichthi", {url: currenturl});
+	res.render("lichthi", {url: currenturl, title:'Lịch thi ở Dream Wings English'});
 });
 
 
@@ -208,46 +212,180 @@ app.get("/lich-thi", function(req, res) {
 
 app.get("/loi-ich-hoc-tieng-anh-som", function(req, res) {
 	var currenturl = req.url;
-	res.render("loiich", {url: currenturl});
+	res.render("loiich", {url: currenturl, title:'Lợi ích của việc học tiếng Anh sớm | Dream Wings English'});
 });
 
 //reading with tony page
 app.get("/readingwithtony", function(req, res) {
 	var currenturl = req.url;
-	res.render("readingwithtony", {url: currenturl});
+	res.render("readingwithtony", {url: currenturl, title:'Reading With Tony | Dream Wings English'});
 });
 
 //reading with tony page
 app.get("/phongvan/Thu", function(req, res) {
 	var currenturl = req.url;
-	res.render("phongvanThu", {url: currenturl});
+	res.render("phongvanThu", {url: currenturl, title:'Phỏng vấn giáo viên - Ms.Thư | Dream Wings English'});
 });
 
 //tiêu chí page
 app.get("/tieu-chi-day-hoc-DWE", function(req, res) {
 	var currenturl = req.url;
-	res.render("tieuchidayhoc", {url: currenturl});
+	res.render("tieuchidayhoc", {url: currenturl, title:'Tiêu chí dạy học ở Dream Wings English'});
 });
 
 //thi cambridge page
 
 app.get("/thi-chung-chi-cambridge", function(req, res) {
 	var currenturl = req.url;
-	res.render("thicambridge", {url: currenturl});
+	res.render("thicambridge", {url: currenturl, title:'Chuẩn bị cho kì thi Cambridge và hướng dẫn đăng ký thi | Dream Wings English'});
 });
 
 
 //tiếng anh tại nhà
 app.get("/english-at-home", function(req, res) {
 	var currenturl = req.url;
-	res.render("tienganhtainha", {url: currenturl});
+	res.render("tienganhtainha", {url: currenturl, title:'Cách dạy con học tiếng Anh tại nhà | Dream Wings English'});
 });
 
-//tiếng anh tại nhà
+
+
+
+//online-resource
 app.get("/online-resource/yt", function(req, res) {
 	var currenturl = req.url;
-	res.render("online-resource-yt", {url: currenturl});
-});
+
+	//Get all images from DB
+	OnlineResource.find({}, function(err, allOnlineResources){
+		if(err){
+			console.log(err);
+		} else {
+		  res.render("online-resource-yt", {url: currenturl, title: 'Kênh Youtube học Tiếng Anh' , onlineResources: allOnlineResources});
+ 
+		}
+ 
+		 });
+
+});  
+
+//post a new recommendation on online resource
+
+app.post("/online-resource/yt", function(req, res) {
+	var currenturl = req.url;
+	var onlineResource = req.body.onlineResource;
+	console.log(onlineResource);
+
+	OnlineResource.create(onlineResource, function(err, onlineResource) {
+		if(err) {
+			alert("Không thành công.");
+			console.log(err);
+		} else {
+			onlineResource.save();
+			res.redirect("/online-resource/yt");
+		}
+
+	});
+
+});  
+
+//Classify level Cambridge 
+//add in RESTful route
+
+//online-resource-specific-page
+
+
+//pre-starters
+
+app.get("/online-resource/yt/Pre-Starters", function(req, res) {
+	var currenturl = req.url;
+	var level = "Pre-Starters";
+
+	//Get all images from DB
+	OnlineResource.find({levelCambridge: 'Pre-Starters'}, function(err, allOnlineResources){
+		if(err){
+			console.log(err);
+		} else {
+		  res.render("youtube-specific-level-pre", {url: currenturl, title: 'Kênh Youtube học Tiếng Anh cho cấp độ Pre-Starters' , 
+		  											onlineResources: allOnlineResources, level: level});
+ 
+		}
+ 
+		 });
+
+}); 
+
+app.get("/online-resource/yt/Starters-Movers", function(req, res) {
+	var currenturl = req.url;
+	var level = "Starters - Movers";
+
+	//Get all images from DB
+	OnlineResource.find({levelCambridge: 'Starters - Movers'}, function(err, allOnlineResources){
+		if(err){
+			console.log(err);
+		} else {
+		
+		  res.render("youtube-specific-level-pre", {url: currenturl, title: 'Kênh Youtube học Tiếng Anh cho cấp độ Starters - Movers' , 
+		  											onlineResources: allOnlineResources, level: level});
+ 
+		}
+ 
+		 });
+
+}); 
+
+app.get("/online-resource/yt/Flyers-KET-PET", function(req, res) {
+	var currenturl = req.url;
+	var level = "Flyers - KET - PET";
+
+	//Get all images from DB
+	OnlineResource.find({levelCambridge: 'Flyers - KET - PET'}, function(err, allOnlineResources){
+		if(err){
+			console.log(err);
+		} else {
+		  res.render("youtube-specific-level-pre", {url: currenturl, title: 'Kênh Youtube học Tiếng Anh cho cấp độ Flyers - KET - PET' , 
+		  											onlineResources: allOnlineResources, level: level});
+ 
+		}
+ 
+		 });
+
+}); 
+
+app.get("/online-resource/yt/FCE", function(req, res) {
+	var currenturl = req.url;
+	var level = "FCE";
+
+	//Get all images from DB
+	OnlineResource.find({levelCambridge: 'FCE'}, function(err, allOnlineResources){
+		if(err){
+			console.log(err);
+		} else {
+		  res.render("youtube-specific-level-pre", {url: currenturl, title: 'Kênh Youtube học Tiếng Anh cho cấp độ FCE' , 
+		  											onlineResources: allOnlineResources, level: level});
+ 
+		}
+ 
+		 });
+
+}); 
+
+app.get("/online-resource/yt/IELTS", function(req, res) {
+	var currenturl = req.url;
+	var level = "IELTS";
+
+	//Get all images from DB
+	OnlineResource.find({levelCambridge: 'IELTS'}, function(err, allOnlineResources){
+		if(err){
+			console.log(err);
+		} else {
+		  res.render("youtube-specific-level-pre", {url: currenturl, title: 'Kênh Youtube học Tiếng Anh cho cấp độ IELTS' , 
+		  											onlineResources: allOnlineResources, level: level});
+ 
+		}
+ 
+		 });
+
+}); 
+
 
 //PAGE hoat dong, memories hinh anh - from here
 
@@ -255,7 +393,7 @@ app.get("/online-resource/yt", function(req, res) {
 
 app.get("/albummoi", isLoggedIn, function(req, res) {
 	var currenturl = req.url;
-	res.render("albummoi", {url: currenturl});
+	res.render("albummoi", {url: currenturl, title:'Đăng một album mới | Dream Wings English'});
 });
 
 
@@ -280,7 +418,7 @@ app.get("/hoat-dong-ki-niem/:id", function(req, res) {
 		       if(err){
 		           console.log(err);
 		       } else {
-		         res.render("showAlbum", {url: currenturl, album: foundAlbum, image: allImages});
+		         res.render("showAlbum", {url: currenturl, title:`Album ${curAlbum.title} | Dream Wings English`, album: foundAlbum, image: allImages});
 		       }
 
 		   	 });
@@ -303,7 +441,7 @@ app.get("/hoat-dong-ki-niem-videos", function(req, res) {
        if(err){
            console.log(err);
        } else {
-         res.render("hoatdong-video", {url: currenturl, videos: allVideos});
+         res.render("hoatdong-video", {url: currenturl, title:'Videos học tập tại Dream Wings English', videos: allVideos});
        }
 
    	 });
@@ -344,7 +482,7 @@ app.get("/hoat-dong-ki-niem", function(req, res) {
        if(err){
            console.log(err);
        } else {
-         res.render("hoatdong", {url: currenturl, albums: allAlbums});
+         res.render("hoatdong", {url: currenturl, title:'Hoạt động kỉ niệm, hình ảnh tại Dream Wings English', albums: allAlbums});
 
        }
 
@@ -411,7 +549,7 @@ app.get("/hoat-dong-ki-niem/:id/edit", isLoggedIn, function(req, res) {
 		if(err) {
 			console.log(err);
 		} else {
-			res.render("editAlbum", {url: currenturl, album: foundAlbum});
+			res.render("editAlbum", {url: currenturl, title:`Chỉnh sửa album ${foundAlbum.title} | Dream Wings English`, album: foundAlbum});
 		}
 	})
 });
@@ -467,7 +605,7 @@ app.delete("/hoat-dong-ki-niem/:id", isLoggedIn, function(req, res) {
 
 app.get("/thong-tin-lien-lac", function(req, res) {
 	var currenturl = req.url;
-	res.render("lienlac", {url: currenturl});
+	res.render("lienlac", {url: currenturl, title:'Liên hệ | Dream Wings English'});
 });
 
 
@@ -512,12 +650,12 @@ app.post("/thong-tin-lien-lac", function(req, res) {
 	        if (err) {
 	            console.log(err);
 		    	console.log(mailOptions);
-			      res.render('contact-failure', {url: currenturl}) // Show a page indicating failure
+			      res.render('contact-failure', {url: currenturl, title:'Gửi mail thành công | Dream Wings English'}) // Show a page indicating failure
 			      // window.alert('Gửi thư thất bại, xin thử lại sau hoặc liên hệ số điện thoại: 0903674268.');
 	        } else {
 	             // window.alert('Đã gửi thư thành công! Chúng tôi sẽ liên hệ với bạn sớm nhất có thể.');
 			    console.log(mailOptions);
-			      res.render('contact-success', {url: currenturl}) // Show a page indicating success
+			      res.render('contact-success', {url: currenturl, title:'Gửi mail thất bại | Dream Wings English'}) // Show a page indicating success
 			      
 		        }
 	    });
@@ -551,7 +689,8 @@ app.get("/tintuc", function(req, res) {
                 console.log(err);
             } else {
                 res.render("tintuc", {
-                	url: currenturl,
+                	url: currenturl, 
+					title:'Tin tức - Thông báo | Dream Wings English',
                     blogs: allBlogs,
                     current: pageNumber,
                     pages: Math.ceil(count / perPage)
@@ -568,7 +707,7 @@ app.get("/tintuc", function(req, res) {
 
 app.get("/tintuc/new", isLoggedIn, function(req, res) {
 	var currenturl = req.url;
-	res.render("newBlog", {url: currenturl});
+	res.render("newBlog", {url: currenturl, title:'Đăng bài tin tức mới | Dream Wings English'});
 });
 
 //create new blog
@@ -605,7 +744,7 @@ app.get("/tintuc/:id", function(req, res) {
 		if(err) {
 			console.log(err);
 		} else {
-			res.render("showBlog", {url: currenturl, blog: foundBlog});
+			res.render("showBlog", {url: currenturl, title: `${foundBlog.title} | Dream Wings English`, blog: foundBlog});
 		}
 	})
 	//pass in value
@@ -622,7 +761,7 @@ app.get("/tintuc/:id/edit", isLoggedIn, function(req, res) {
 		if(err) {
 			console.log(err);
 		} else {
-			res.render("editBlog", {url: currenturl, blog: foundBlog});
+			res.render("editBlog", {url: currenturl, title: `Chỉnh sửa bài ${foundBlog.title} | Dream Wings English`, blog: foundBlog});
 		}
 	})
 });

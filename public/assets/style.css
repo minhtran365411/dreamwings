@@ -12,11 +12,87 @@ body {
 	margin-bottom: 10%;
 }
 
+
+
 /*nav style*/
 
+
 #mainNav {
-	padding-top: 1%;
+	padding-bottom: 1%;
+	border-bottom: 5px solid #A0DB48;
+	background: white !important;
+	font-weight: bold;
+	color: rgb(22, 22, 22);
+	padding: 0 1rem !important;
 }
+
+
+#mainNav.scrolled {
+	background: rgba(255, 255, 255, 0.8) !important;
+	transition: background 200ms;
+}
+
+#mainNav.scrolled:hover {
+	background: white !important;
+}
+
+.dropdown {
+	float: right !important;
+  }
+
+/* #116EBF blue */
+.nav-item.dropdown:hover > .nav-link::after {
+    width: 100%;
+}
+
+.nav-item a.nav-link {
+	position: relative;
+	display: block;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: 0.3s;
+  }
+
+  .nav-item a.nav-link::after {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 3px;
+	top: 100%;
+	left: 0;
+	background: #116EBF;
+	transition: transform 0.3s;
+	transform: scaleX(0);
+	transform-origin: right;
+  }
+
+.dropdown-toggle::after {
+	border-top: 0px;
+  }
+
+
+  .nav-item a.nav-link:hover {
+	color: #272727;
+  }
+  .nav-item a.nav-link:hover::after {
+	transform: scaleX(1);
+	transform-origin: left;
+  }
+
+ 
+
+
+.dropdown-item:hover {
+	background-color: #5e5e5e25;
+}
+
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .nav-link{   }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+}	
+
 
 .fa-user {
 	color: #A0DB48 !important ;
@@ -128,20 +204,29 @@ i.fa {
 	color: #3E5B0D;
 }
 
-.carousel {
-	width: 90%;
-	margin: 0 auto;
+
+#carouselExampleControls .carousel-inner .carousel-item img {
+	object-fit: cover !important;
 }
 
-.carousel-inner{
-  width:100%;
-  max-height: 1000px !important;
+#carouselExampleControls, #carouselExampleControls .carousel-inner {
+        height: 100vh;
 }
+
+#carouselExampleControls .carousel-inner > #carouselExampleControls carousel.item {
+    position: relative;
+    display: none;
+    -webkit-transition: 0.6s ease-in-out left;
+    -moz-transition: 0.6s ease-in-out left;
+    -o-transition: 0.6s ease-in-out left;
+    transition: 0.6s ease-in-out left;
+}
+
 
 #carouselExampleControls a.carousel-control {
 
-width: 80px;
-background: #404040;
+width: 60px;
+background: #40404057;
 
 }
 
@@ -155,15 +240,104 @@ background: #404040;
 
 /*This is style for home page - TEACHERS*/
 
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-.flip-card {
-  background-color: transparent;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+
+
+.team-member, .team-member .team-img {
+    position: relative;
+}
+.team-member {
+    overflow: hidden;
 }
 
+.team-img {
+	height: 20vw;
+}
+
+.img-fit-css {
+	min-width: 100%;
+    height: auto;
+    object-fit: cover !important;
+}
+
+.team-member, .team-member .team-img {
+    position: relative;
+}
+
+.team-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    /* border: 20px solid rgba(0, 0, 0, 0.1); */
+    background-color:rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    color: #323232;
+    font-weight: 400;
+    
+}
+
+/* .team-member:hover .team-hover .desk {
+    top: 40%;
+} */
+.team-member:hover .team-hover, .team-member:hover .team-hover .desk, .team-member:hover .team-hover .s-link {
+    opacity: 1;
+}
+.team-hover .desk {
+	background-color: rgba(255, 255, 255, 0.90);
+    position: absolute;
+    top: 55%;
+    width: 90%;
+	height: 90%;
+    opacity: 0;
+    -webkit-transform: translateY(-55%);
+    -ms-transform: translateY(-55%);
+    transform: translateY(-55%);
+    -webkit-transition: all 0.3s 0.2s;
+    transition: all 0.3s 0.2s;
+    padding: 5%;
+	margin: auto auto;
+}
+
+.team-hover .desk h5 {
+	font-weight: bold;
+	
+}
+
+
+.team-title {
+    position: static;
+    padding: 20px 0;
+    display: inline-block;
+    letter-spacing: 2px;
+    width: 100%;
+	text-align: left !important;
+}
+.team-title h5 {
+    margin-bottom: 0px;
+    display: block;
+    text-transform: uppercase;
+}
+.team-title span {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #a5a5a5;
+    letter-spacing: 1px;
+}
+
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+/* .flip-card {
+  background-color: transparent;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; 
+} */
+
 /* This container is needed to position the front and back side */
-.flip-card-inner {
+/* .flip-card-inner {
   position: relative;
   text-align: center;
   transition: transform 0.8s;
@@ -171,40 +345,45 @@ background: #404040;
 
   display: grid; grid-template: 1fr / 1fr;
   grid-template-areas: "frontAndBack";
-}
+} */
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-card:hover .flip-card-inner {
+/* .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
-}
+} */
 
 /* Position the front and back side */
-.flip-card-front, .flip-card-back {
+/* .flip-card-front, .flip-card-back {
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
+  -webkit-backface-visibility: hidden; 
   backface-visibility: hidden;
-}
+} */
 
 /* Style the front side (fallback if image is missing) */
-.flip-card-front {
+/* .flip-card-front {
   background-color: white;
   color: black;
   grid-area: frontAndBack;
-}
+} */
 
 /* Style the back side */
-.flip-card-back {
+/* .flip-card-back {
   color: black;
   grid-area: frontAndBack;
   transform: rotateY(180deg);
   overflow: auto;
   margin-top: 2%;
-}
+} */
 
 
 
 /*styling for map*/
+
+.map {
+	width: 90%;
+	margin: 0 auto;
+}
 
 .map-responsive{
     overflow:hidden;
@@ -322,6 +501,40 @@ background: #404040;
 	margin: 5% auto;
 }
 
+  /* START styling for hoatdong buttons galleryBtn */
+
+a.galleryBtn {
+	color: #116ebfc0 !important;
+	position: relative;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: 0.3s;
+}
+
+a.galleryBtn::after {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 3px;
+	top: 100%;
+	left: 0;
+	background: #116EBF;
+	transition: transform 0.3s;
+	transform: scaleX(0);
+	transform-origin: right;
+  }
+
+
+  a.galleryBtn:hover {
+	color: #116EBF !important;
+  }
+  a.galleryBtn:hover::after {
+	transform: scaleX(1);
+	transform-origin: left;
+  }
+
+  /* end styling for hoatdong buttons galleryBtn */
+
 #imageGallery {
 	width: 95%;
 	margin: 0 auto;
@@ -393,9 +606,21 @@ div.preview-images > img {
 
 
  .blogContainer {
- 	width: 80%;
+ 	width: 50%;
  	margin: 2% auto;
  	margin-bottom: 8%;
+	padding: 2% !important;
+	border: 2px solid #A0DB48;
+ }
+
+ .blogContainer .form-group {
+	 margin-bottom: 3%;
+ }
+
+ .blogContainer .form-group label {
+	 background-color: #a0db4863;
+	 margin-bottom: 2%;
+	 font-weight: bold;
  }
 
  .blogContent {
@@ -520,46 +745,267 @@ div.card {
 
 /* Trang YOUTUBE -online resource */
 
-.yt-card {
-	margin-bottom: 5%;
-}
 
-#menu-online {
-	border-right: 3px solid #74aa22;
-}
 
 .items-level {
-	border-bottom: 1px solid #e6e6e6;
-	padding-bottom: 3%;
-	box-shadow: 0 4px 2px -2px #e6e6e6;
+	border-bottom: 1px solid #b8b5b5c9;
+	padding-bottom: 5%;
+	
 }
 
-.yt-card .tooltiptext {
-  visibility: hidden;
-  width: 150%;
-  background-color: white;
-  border: 1px solid #74aa22;
-  border-radius: 15px;
-  padding: 5%;
-
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-  top: 20%;
-  left: 60%;
+.items-level:hover {
+	padding: 5%;
+	-ms-transform: scale(1.1,1.1); /* IE 9 */
+    -webkit-transform: scale(1.1,1.1); /* Safari */
+    transform: scale(1.1,1.1);
+	background-color: #a0db488a;
+	color: #484041;
+	font-weight: bold;
+	border-radius: 25px;
+  animation-name: example;
+  animation-duration: 0.25s;
+  box-shadow: 5px 10px 8px rgba(0,0,0,0.25);
 }
 
-.yt-card:hover .tooltiptext {
-  visibility: visible;
-  cursor: pointer;
+.items-level:hover .svgGreenArrow {
+		display: none;
+	}
+
+.items-level:hover .svgWhiteArrow {
+		display: block;
+	}
+
+
+
+.svgGreenArrow {
+	float: right;
+	display: block;
 }
 
-.tip2 {
-	left: -30% !important;
+.svgWhiteArrow {
+	float: right;
+	display: none;
 }
 
-.tip3 {
-	left: -50% !important;
+.resourceTitle {
+	color: #1A86C9;
+	padding-bottom: 1%;
+	border-bottom: 2px solid #1A86C9;
+	display: inline-block;
+}
+
+.levelSection {
+	margin-bottom: 10%;
+}
+
+/* css for modal box (to add in new recommendations) */
+
+.backBtn:hover {
+	-ms-transform: scale(1.1,1.1); /* IE 9 */
+    -webkit-transform: scale(1.1,1.1); /* Safari */
+    transform: scale(1.1,1.1);
+	font-weight: bold;
+	border-radius: 25px;
+  animation-name: example;
+  animation-duration: 0.25s;
+
+}
+
+/*
+    code by Iatek LLC 2018 - CC 2.0 License - Attribution required
+    code customized by Azmind.com
+*/
+
+.card-title-name {
+	font-weight: bold;
+	color: white;
+	padding: 2%;
+	background-color: #1d1d1db7;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Show 4th slide on md if col-md-4*/
+    .carousel-inner .active.col-md-4.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -33.3333%;  /*change this with javascript in the future*/
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+    /* Show 3rd slide on sm if col-sm-6*/
+    .carousel-inner .active.col-sm-6.carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -50%;  /*change this with javascript in the future*/
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+}
+@media (min-width: 576px) {
+    .carousel-item {
+        margin-right: 0;
+    }
+    /* show 2 items */
+    .carousel-inner .active + .carousel-item {
+        display: block;
+    }
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item {
+        transition: none;
+    }
+    .carousel-inner .carousel-item-next {
+        position: relative;
+        transform: translate3d(0, 0, 0);
+    }
+    /* left or forward direction */
+    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    .carousel-item-next.carousel-item-left + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+    /* farthest right hidden item must be also positioned for animations */
+    .carousel-inner .carousel-item-prev.carousel-item-right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+    /* right or prev direction */
+    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    .carousel-item-prev.carousel-item-right + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+}
+/* MD */
+@media (min-width: 768px) {
+    /* show 3rd of 3 item slide */
+    .carousel-inner .active + .carousel-item + .carousel-item {
+        display: block;
+    }
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+        transition: none;
+    }
+    .carousel-inner .carousel-item-next {
+        position: relative;
+        transform: translate3d(0, 0, 0);
+    }
+    /* left or forward direction */
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+    /* right or prev direction */
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+}
+/* LG */
+@media (min-width: 991px) {
+    /* show 4th item */
+    .carousel-inner .active + .carousel-item + .carousel-item + .carousel-item {
+        display: block;
+    }
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item {
+        transition: none;
+    }
+    /* Show 5th slide on lg if col-lg-3 */
+    .carousel-inner .active.col-lg-3.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -25%;  /*change this with javascript in the future*/
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+    /* left or forward direction */
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+    /* right or prev direction //t - previous slide direction last item animation fix */
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+}
+  
+
+/* styling for youtube online resources specific level  */
+
+.snippet-body .row .col-6 {
+	margin-left: 4%;
+	margin-right: 4%;
+}
+
+.product {
+     height: 300px;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
+	border-radius: 5px;
+	background: #0e0e0f;
+	overflow: hidden;
+}
+
+.product:hover {
+	cursor: pointer;
+}
+
+.product .imgbox {
+	box-sizing: border-box;
+	height: 30%;
+}
+
+.product .imgbox img {
+	display: block;
+	margin: 10px auto 0 auto;
+}
+
+
+
+.product .specifies {
+	position: relative;
+	width: 100%;
+	bottom: -50%;
+	background: #fff;
+	padding: 3% 5%;
+	box-sizing: border-box;
+	transition: .5s;
+	height: 70%;
+}
+
+.product:hover .specifies {
+	bottom: 0;
+	padding: 5%;
+}
+
+.specifies h5 {
+	color: #1A86C9;
+}
+
+.starRating1, .starRating2, .starRating3 {
+	float: right;
+	display: block;
 }
 
 
@@ -656,7 +1102,29 @@ div.card {
 			margin: auto 0;
 		}
 
-		.flip-card {
+		.team-hover .desk h5 {
+			font-weight: bold;
+			font-size: 0.7rem !important;
+		}
+		
+		.team-hover .desk p {
+			font-size: 0.6rem !important;
+			margin-top: 0.5rem !important;
+			margin-bottom: 0 !important;
+			line-height: 1rem;
+		}
+
+		.team-img {
+			height: 30vw;
+		}
+		
+		.team-hover .desk {
+			width: 90%;
+			height: 90%;
+			padding: 3%;
+		}
+
+		/* .flip-card {
 			line-height: 0;
 		}
 
@@ -681,7 +1149,7 @@ div.card {
 
 		.quote {
 			display: none;
-		}
+		} */
 
 		/* styling for tuyensinh */
 
@@ -851,29 +1319,7 @@ div.card {
 
 			/*style for onlineresource*/
 
-		#menu-online {
-			border-right: 0px;
-		}
-
-
-		.yt-card .tooltiptext {
-		top:0%;
-		border: 0px;
-		 visibility: visible;
-		 width: 100%;
-		  /* Position the tooltip */
-  		position: static;
-  		z-index: 0;
-  		padding: 0% 3% 3% 3%;
-		}
-
-		.tooltiptext .card-title {
-			display: none;
-		}
-
-		.card-body {
-			padding-bottom: 2% !important;
-		}
+	
 
 
 
