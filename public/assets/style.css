@@ -1,10 +1,11 @@
 html {
 	width: 100%;
 	margin: 0 auto;
+	scroll-behavior: smooth;
 }
 
 body {
-	font-family: 'Exo', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-size: 1.2rem;
 }
 
@@ -20,16 +21,40 @@ body {
 #mainNav {
 	padding-bottom: 1%;
 	border-bottom: 5px solid #A0DB48;
-	background: white !important;
+	/* background: white !important; */
+
+	  /* Add the blur effect */
+	  -webkit-backdrop-filter: blur(30px);
+	  backdrop-filter: blur(30px);
+	  
+
 	font-weight: bold;
-	color: rgb(22, 22, 22);
+	color: white !important;
 	padding: 0 1rem !important;
+}
+
+#mainNav a {
+	color: white !important;
 }
 
 
 #mainNav.scrolled {
 	background: rgba(255, 255, 255, 0.8) !important;
+	/* -webkit-backdrop-filter: blur(10px);
+  	backdrop-filter: blur(10px); */
 	transition: background 200ms;
+}
+
+#mainNav.scrolled a {
+	color: rgb(22, 22, 22) !important;
+}
+
+#mainNav:hover {
+	background: white !important;
+}
+
+#mainNav:hover a {
+	color: rgb(22, 22, 22) !important;
 }
 
 #mainNav.scrolled:hover {
@@ -156,6 +181,81 @@ i.fa {
 	padding-top: 3%;
 }
 
+/*This is style for home page -intro- HERO IMG*/
+
+.hero {
+	/* Sizing */
+    width: 100vw;
+    height: 100vh;
+    
+    /* Flexbox stuff */
+    display: flex;
+    
+	/* Text styles */
+    text-align: left;
+    
+    /* Background styles */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/hero-img.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  .hero-inner {
+	/* Sizing */
+    width: 50vw;
+    height: 100vh;
+	background-color: rgba(0, 0, 0, 0.7);
+
+	display: flex;
+    
+    align-items: center;
+  }
+
+  .hero-content-box {
+	  width: 80%;
+	  margin: auto auto;
+  }
+
+  .hero-logo {
+	  width: 30%;
+  }
+
+  .hero-content-box h2{
+	  color: #48ABFF !important;
+	  font-weight: 800;
+	  font-size: 2.5rem;
+  }
+
+  .hero-content-box h1{
+	color: #FFC200 !important;
+	font-weight: 800;
+	font-size: 3.5rem;
+}
+
+.hero-content-box p{
+	width: 95%;
+	font-size: 110%;
+	color: white !important;
+}
+
+.hero-btn button{
+	background-color: rgba(225, 225, 225, 0.3);
+	border: none;
+    cursor:pointer;
+    outline:none;
+	border-radius: 25px;
+	color: #FFC200 !important;
+	font-weight: 500;
+	padding: 2% 3%;
+	letter-spacing: .1em;;
+}
+
+.hero-btn button:hover {
+	background-color: #CE9D00;
+	color: white !important;
+}
 
 /*This is style for home page*/
 
@@ -888,9 +988,12 @@ div.card {
         display: block;
         visibility: visible;
     }
+
+	
+
 }
 /* MD */
-@media (min-width: 768px) {
+@media (min-width: 800px) {
     /* show 3rd of 3 item slide */
     .carousel-inner .active + .carousel-item + .carousel-item {
         display: block;
@@ -916,6 +1019,24 @@ div.card {
         display: block;
         visibility: visible;
     }
+
+	/* rstyling for hero img index page */
+	.hero-inner {
+		/* Sizing */
+		width: 70vw;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.7);
+	
+		display: flex;
+		
+		align-items: center;
+	  }
+	
+	  .hero-content-box {
+		  width: 80%;
+		  margin: auto auto;
+	  }
+
 }
 /* LG */
 @media (min-width: 991px) {
@@ -949,6 +1070,23 @@ div.card {
         display: block;
         visibility: visible;
     }
+
+	/* rstyling for hero img index page */
+	.hero-inner {
+		/* Sizing */
+		width: 50vw;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.7);
+	
+		display: flex;
+		
+		align-items: center;
+	  }
+	
+	  .hero-content-box {
+		  width: 80%;
+		  margin: auto auto;
+	  }
 }
   
 
@@ -1056,6 +1194,45 @@ div.card {
 		}
 
 	/* STYLING FOR HOMEPAGE index.ejs */
+
+	/* rstyling for hero img index page */
+	.hero-inner {
+		/* Sizing */
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.7);
+	
+		display: flex;
+		
+		align-items: center;
+	  }
+	
+	  .hero-content-box {
+		  width: 70%;
+		  margin: auto auto;
+	  }
+
+  
+	.hero-content-box h2{
+		margin-top: 5%;
+		color: #48ABFF !important;
+		font-weight: 800;
+		font-size: 1.8rem;
+	}
+  
+	.hero-content-box h1{
+	  color: #FFC200 !important;
+	  font-weight: 800;
+	  font-size: 2.2rem;
+  }
+  
+  .hero-content-box p{
+	  width: 95%;
+	  font-size: 110%;
+	  color: white !important;
+  }
+  
+
 		.pageContent {
 			margin: 10% auto !important;
 		}
