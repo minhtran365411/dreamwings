@@ -303,10 +303,10 @@ i.fa {
 
 .section-list img {
 	width: 80%;
-	height: auto;
-	align-self: center;
-	margin: 0 auto;
-	vertical-align: middle
+	height: auto !important;
+	align-self: center !important;
+	margin: auto auto !important;
+	vertical-align: middle !important;
 }
 
 .section-list img:hover {
@@ -1297,7 +1297,7 @@ div.card {
 	  }
 	
 	  .hero-content-box {
-		  width: 70%;
+		  width: 80%;
 		  margin: auto auto;
 	  }
 
@@ -1306,13 +1306,13 @@ div.card {
 		margin-top: 5%;
 		color: #48ABFF !important;
 		font-weight: 800;
-		font-size: 1.8rem;
+		font-size: 1.4rem;
 	}
   
 	.hero-content-box h1{
 	  color: #FFC200 !important;
 	  font-weight: 800;
-	  font-size: 2.2rem;
+	  font-size: 1.6rem;
   }
   
   .hero-content-box p{
@@ -1339,7 +1339,7 @@ div.card {
 
   .section-list img{
 	width: 60%;
-	height: 60% !important;
+	height: auto !important;
 }
 
   #section2 {
