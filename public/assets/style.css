@@ -303,6 +303,7 @@ i.fa {
 
 .section-list img {
 	width: 80%;
+	height: auto !important;
 }
 
 .section-list img:hover {
@@ -1206,8 +1207,12 @@ div.card {
 
 @media (max-width: 1500px) {
 
+.section-inner {
+	width: 95% !important;
+}
+
 .section-content {
-	width: 90%;
+	width: 85%;
   }
 
 
@@ -1217,6 +1222,7 @@ div.card {
 
   .section-list img{
 	width: 70%;
+	height: auto !important;
 }
 
 
@@ -1328,6 +1334,7 @@ div.card {
 
   .section-list img{
 	width: 60%;
+	height: auto !important;
 }
 
   #section2 {
