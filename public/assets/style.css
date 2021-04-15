@@ -303,7 +303,10 @@ i.fa {
 
 .section-list img {
 	width: 80%;
-	height: auto !important;
+	height: auto;
+	align-self: center;
+	margin: 0 auto;
+	vertical-align: middle
 }
 
 .section-list img:hover {
@@ -1336,7 +1339,7 @@ div.card {
 
   .section-list img{
 	width: 60%;
-	height: auto !important;
+	height: 60% !important;
 }
 
   #section2 {
