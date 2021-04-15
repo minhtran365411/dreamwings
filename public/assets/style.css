@@ -1278,6 +1278,8 @@ div.card {
 	/* rstyling for hero img index page */
 		.hero {
 			background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/hero-img-phone.jpg") !important;
+			background-attachment: initial !important;
+			background-size: cover !important;
 		}
 
 	.hero-inner {
