@@ -195,7 +195,7 @@ i.fa {
     text-align: left;
     
     /* Background styles */
-    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/hero-img.png");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/hero-img.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -258,6 +258,62 @@ i.fa {
 }
 
 /*This is style for home page*/
+
+#section2 {
+
+    /* Background styles */
+    background-image: url("../images/bg-grad.png");
+    background-position: right top;
+    background-repeat: no-repeat;
+	background-size: contain;
+	position: static;
+	z-index: 8;
+
+	margin-bottom: 5%;
+}
+
+.section-inner {
+	margin: auto auto; 
+}
+
+.section-content h1 {
+	color: #2699FB;
+	font-weight: bold;
+}
+
+.section-content p {
+	font-weight: 500;
+}
+
+.section-content {
+	width: 70%;
+	margin: 5% auto; 
+	text-align: center;
+}
+
+.section-list {
+	width: 80%;
+	margin: 0 auto;
+	font-size: 1.1rem !important;
+}
+
+.section-list ul li {
+	margin-bottom: 2%;
+}
+
+.section-list img {
+	width: 80%;
+}
+
+.section-list img:hover {
+	animation:rotate 3s ;
+	animation-timing-function: cubic-bezier(1.5,0,1,1.5);
+}
+	
+	@-webkit-keyframes rotate {
+		from { -webkit-transform: rotate(0deg) } 
+		to { -webkit-transform: rotate(360deg) } 
+	}
 
 .bigHeading {
 	line-height: 1.6;
@@ -373,8 +429,8 @@ background: #40404057;
     /* border: 20px solid rgba(0, 0, 0, 0.1); */
     background-color:rgba(0, 0, 0, 0.1);
     opacity: 0;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
     color: #323232;
     font-weight: 400;
     
@@ -1146,6 +1202,24 @@ div.card {
 	display: block;
 }
 
+/* STYLING FOR IPAD INTERFACE */
+
+@media (max-width: 1500px) {
+
+.section-content {
+	width: 90%;
+  }
+
+
+  .section-list {
+	  width: 80%;
+  }
+
+  .section-list img{
+	width: 70%;
+}
+
+
 
 /* STYLING FOR PHONE INTERFACE */
 
@@ -1196,6 +1270,10 @@ div.card {
 	/* STYLING FOR HOMEPAGE index.ejs */
 
 	/* rstyling for hero img index page */
+		.hero {
+			background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("../images/hero-img-phone.jpg") !important;
+		}
+
 	.hero-inner {
 		/* Sizing */
 		width: 100vw;
@@ -1231,6 +1309,32 @@ div.card {
 	  font-size: 110%;
 	  color: white !important;
   }
+
+  .section-content {
+	width: 100%;
+  }
+
+  .section-content h1 {
+	font-size: 1.1rem;
+  }
+
+  .section-list {
+	  width: 90%;
+  }
+
+  .section-list ul li {
+	font-size: 0.8rem !important;
+  }
+
+  .section-list img{
+	width: 60%;
+}
+
+  #section2 {
+	  background-size: 110% !important;
+	  position: cover;
+  }
+
   
 
 		.pageContent {
