@@ -398,6 +398,40 @@ background: #40404057;
 	display: inline-block;
 }
 
+/*This is style for teaching techniques*/
+
+	#phone-techniques {
+		display: block;
+	}
+
+	.lap-techniques {
+		display: none;
+	}
+
+@media (min-width: 1200px) {
+
+	#phone-techniques {
+		display: none;
+	}
+	
+	.lap-techniques {
+		display: block;
+		/* Background styles */
+		background-image: url("../images/techniques.png");
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+	
+	
+		/* Sizing */
+		width: 100vw;
+		height: 130vh;
+	}
+	
+}
+
+
+
 /*This is style for home page - TEACHERS*/
 
 
