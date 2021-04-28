@@ -799,23 +799,29 @@ div.preview-images > img {
 	}
 
 
- .blogContainer {
- 	width: 50%;
- 	margin: 2% auto;
- 	margin-bottom: 8%;
-	padding: 2% !important;
-	border: 2px solid #A0DB48;
- }
-
- .blogContainer .form-group {
-	 margin-bottom: 3%;
- }
-
- .blogContainer .form-group label {
-	 background-color: #a0db4863;
-	 margin-bottom: 2%;
-	 font-weight: bold;
- }
+	.blogContainer {
+		width: 80%;
+		margin: 2% auto;
+		margin-bottom: 8%;
+	 }
+	
+	 .formContainer {
+		width: 50%;
+		margin: 2% auto;
+		margin-bottom: 8%;
+	   padding: 2% !important;
+	   border: 2px solid #A0DB48;
+	 }
+	
+	 .formContainer .form-group {
+		 margin-bottom: 3%;
+	 }
+	
+	 .formContainer .form-group label {
+		 background-color: #a0db4863;
+		 margin-bottom: 2%;
+		 font-weight: bold;
+	 }
 
  .blogContent {
  	text-align: left;
