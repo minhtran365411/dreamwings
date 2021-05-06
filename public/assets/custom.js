@@ -73,6 +73,19 @@ document.querySelectorAll(".team-img :first-child").forEach(function(c){
 });
 
 
+//Chia cot
+// if ($(window).width() < 768) {
+//   document.querySelector('.sideMenu').classList.add("order-first");
+// }
+
+function myFunction(x) {
+  if (x.matches) { // If media query matches
+    document.querySelector('.sideMenu').classList.add("order-first"); // Attach listener function on state changes
+  } 
+}
+var x = window.matchMedia("(max-width: 900px)");
+myFunction(x); // Call listener function at run time
+
 
 
 

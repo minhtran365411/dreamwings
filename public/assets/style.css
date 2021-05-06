@@ -670,19 +670,30 @@ background: #40404057;
 
 /* Style tieuchi */
 
+.paddingTop {
+	margin-top: 10%;
+	width: 95%;
+}
+
+
+.paddingRight {
+	padding-right: 4%;
+	border-right: 0.5px solid #7c7c7c3a;
+}
+
 .menulist {
-	border: 1px solid #116EBF;
-	border-radius: 15%;
-	padding: 5%;
-	width: 80%;
+	padding-left: 5%;
 	position: -webkit-sticky; /* Safari */
  	position: sticky;
-    top: 5%;
-    background-color: #d0e7fb;
+    top: 15%;
     margin: 0 auto;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
    }
 
+.sideMenuList li:hover {
+	padding-left: 15px;
+	font-weight: 600;
+}
 /* Style FOR HOAT-DONG */
 
 #tintucHigh {
