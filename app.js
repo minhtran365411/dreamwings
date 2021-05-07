@@ -146,7 +146,7 @@ app.get("/", function(req, res) {
 
 
 // show register form
-app.get("/register", function(req, res){
+app.get("/registerSecretNgongGooseDWE", function(req, res){
 	var currenturl = req.url;
    res.render("register", {url: currenturl,  title:'Đăng ký Admin'}); 
 });
@@ -418,7 +418,7 @@ app.get("/hoat-dong-ki-niem/:id", function(req, res) {
 		       if(err){
 		           console.log(err);
 		       } else {
-		         res.render("showAlbum", {url: currenturl, title:`Album ${curAlbum.title} | Dream Wings English`, album: foundAlbum, image: allImages});
+		         res.render("showAlbum", {url: currenturl, title:`Album ${foundAlbum.title} | Dream Wings English`, album: foundAlbum, image: allImages});
 		       }
 
 		   	 });
@@ -477,7 +477,7 @@ app.post("/hoat-dong-ki-niem-videos", parserVideo.array("video", 12), (req, res)
 app.get("/hoat-dong-ki-niem", function(req, res) {
 	var currenturl = req.url;
 
-//Get all images from DB
+//Get all albums from DB
 	 Album.find({}).sort({ createAt: 'desc' }).exec(function(err, allAlbums){
        if(err){
            console.log(err);
@@ -523,7 +523,8 @@ app.post("/hoat-dong-ki-niem/:id", parser.array("image", 12), (req, res) => {
 		  // image.id = req.files[i].public_id;
 		  const data = {
 		  	imageURL:req.files[i].path,
-		  	album: curAlbum
+		  	album: curAlbum,
+			text: 'Hoạt động thú vị tại Dream Wings English'
 		  }
 		  
 		   Image.create(data, function(err, image) {
@@ -554,6 +555,8 @@ app.get("/hoat-dong-ki-niem/:id/edit", isLoggedIn, function(req, res) {
 	})
 });
 
+
+
 //put in newly edit album
 
 app.put("/hoat-dong-ki-niem/:id", isLoggedIn, parserAlbum.single("albumImage"), function(req, res) {
@@ -581,15 +584,61 @@ app.put("/hoat-dong-ki-niem/:id", isLoggedIn, parserAlbum.single("albumImage"), 
 	
 });
 
-//delete blog
+//put in image caption
+
+app.put("/hoat-dong-ki-niem/:id/:id", isLoggedIn, function(req, res) {
+	let backURL = req.header('Referer') || '/hoat-dong-ki-niem';
+	console.log(req.body.image.text);
+  
+	if(req.file) {
+		Image.findByIdAndUpdate(req.params.id, {
+			text: req.body.image.text
+		}, function(err, updatedImage) {
+				if(err) {
+					console.log(updatedImage);
+					console.log(err);
+				} else {
+					console.log(updatedImage);
+					res.redirect(backURL);
+				}
+			});
+		// } else {
+		// 	Image.findByIdAndUpdate(req.params.id, req.body, function(err, updatedImage) {
+		// 	if(err) {
+		// 		console.log(err);
+		// 	} else {
+		// 		console.log(updatedImage);
+		// 		res.redirect(backURL);
+		// 	}
+		// });
+	}
+
+});
+
+//delete album
 
 app.delete("/hoat-dong-ki-niem/:id", isLoggedIn, function(req, res) {
-	Album.findByIdAndRemove(req.params.id, function(err) {
+
+			Album.findByIdAndRemove(req.params.id, function(err) {
+				if(err) {
+					console.log(err);
+				} else {
+					res.redirect("/hoat-dong-ki-niem");
+				}
+			});
+
+});
+
+//delete album
+
+app.delete("/hoat-dong-ki-niem/:id/:id", isLoggedIn, function(req, res) {
+	let backURL = req.header('Referer') || '/hoat-dong-ki-niem';
+  
+	Image.findByIdAndRemove(req.params.id, function(err) {
 		if(err) {
 			console.log(err);
-			console.log(req.params.id);
 		} else {
-			res.redirect("/hoat-dong-ki-niem");
+  			res.redirect(backURL);
 		}
 	});
 });

@@ -5,7 +5,8 @@ var mongoose = require("mongoose");
 var ImageSchema = new mongoose.Schema({
 	
 	album: mongoose.Schema.Types.Mixed,
-	imageURL: String
+	imageURL: String,
+	text: String
 });
 
 

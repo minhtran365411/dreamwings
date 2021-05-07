@@ -4,6 +4,7 @@
 	<!-- WALLPAPER -->
 	
 	
+	
 	<header id="homeHead" ><img src="images/hoatdongkiniem.jpg" size="100%"></header>
 
 
@@ -74,14 +75,49 @@
 			<% image.forEach(function(image) { %>
 
 				<div class="col-md-6 col-lg-4 mb-3 d-flex align-items-center">
+					<% if(currentUser){ %>
+						<button type="button" class="btn btn-success editBtnImage" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-pen"></i></button>
+						<form action="/hoat-dong-ki-niem/<%= album._id %>/<%= image._id %>?_method=DELETE" method="POST" class="deleteBtnImage">
+							<button class="btn btn-danger deleteImgEl"><i class="fas fa-times"></i></i></button>
+						</form>
+						
+					<% } %>
+						
+				<div>
 					<img src="<%= image.imageURL %>" class="img-fluid " >
+					<% if(image.text){ %>
+					<p class="card-text textImg"><%= image.text %></p>
+					<% } %>
 				</div>
+
+				</div>
+			
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Add caption </h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					</div>
+					<div class="modal-body">
+						<form action="/hoat-dong-ki-niem/<%= album._id %>/<%= image._id %>?_method=PUT" method="POST"> 
+							<textarea class="insertText" name="image[text]" placeholder="Caption..."></textarea>
+							<button type="submit" class="insertTextBtn btn btn-primary">Submit</button>
+						</form>
+					</div>
+				</div>
+				</div>
+			</div>
 
 			<% }); %>
 		<% } %>
 			
 
 		</div>
+
 	
 
 	</section>
