@@ -143,6 +143,67 @@ app.get("/", function(req, res) {
 	res.render("index", {url: currenturl});
 });
 
+app.post("/", function(req, res) {
+	var currenturl = req.url;
+
+
+	const auth = {
+        host: 'smtp.gmail.com',
+		    port: 587,
+		    auth: {
+			    user: 'dreamwingsenglish@gmail.com',
+			    pass: '463@dreamwingsanhngucokhanh'
+			  },
+			  tls: {
+				rejectUnauthorized: false
+			}
+    };
+
+    const transporter = nodemailer.createTransport(auth);
+
+    var content = '';
+    content += `
+        <div style="padding: 10px; background-color: #003375" width: 60%;>
+            <div style="padding: 10px; background-color: white;">
+                <h1 style="color: #0085ff; text-align: center; text-transform: uppercase; margin: 2% 0;">Thông tin liên lạc được gửi từ web Dreamwings English</h1>
+                <p style="color: black; font-size: 1.2rem; white-space: pre-wrap; line-height: 1.6; margin: 2% 10%;">
+				<b>Tên Học Viên:</b> ${req.body.tenHocVien}<br>
+				<b>Năm Sinh:</b> ${req.body.namSinhHocVien}<br>
+				<b>Tên Phụ Huynh:</b> ${req.body.tenPhuHuynh}<br>
+				<b>Số điện thoại:</b> ${req.body.soDienThoai}<br>
+				<b>Nội dung:</b><br><br>${req.body.noiDung}<br></p>
+            </div>
+        </div>
+    `;
+
+    const mailOptions = {
+    		from: '"Dreamwings English" <dreamwingsenglish@gmail.com>',
+	        to: 'dreamwingsenglish@gmail.com',
+	        subject: 'Đơn liên lạc mới từ trang web Dreamwings English:',
+	        html: content
+	        // text: `Tên: ${req.body.ten}\nEmail: ${req.body.emailForm}\nSố điện thoại: ${req.body.sodienthoai}\nNội dung: ${req.body.tinnhan}`
+	    };
+
+	    transporter.sendMail(mailOptions, function(err, data) {
+	        if (err) {
+	            console.log(err);
+		    	console.log(mailOptions);
+			      res.render('contact-failure', {url: currenturl, title:'Gửi mail thành công | Dream Wings English'}) // Show a page indicating failure
+			      // window.alert('Gửi thư thất bại, xin thử lại sau hoặc liên hệ số điện thoại: 0903674268.');
+	        } else {
+	             // window.alert('Đã gửi thư thành công! Chúng tôi sẽ liên hệ với bạn sớm nhất có thể.');
+			    console.log(mailOptions);
+			      res.render('contact-success', {url: currenturl, title:'Gửi mail thất bại | Dream Wings English'}) // Show a page indicating success
+			      
+		        }
+	    });
+
+   
+
+
+  });
+// });
+
 
 
 // show register form

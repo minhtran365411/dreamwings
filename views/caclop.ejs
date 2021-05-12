@@ -16,15 +16,54 @@
 								
 			</div>
 
-		<section class="pageContent tuyensinh p-3">
-			<h1 class="bigHeading mb-4" style="color: #ffff1a;">THÔNG TIN TUYỂN SINH</h1>
-
-			<div class="tuyensinhContent">
-				<h3><span class="circle mr-3">1</span><a href="/cac-khoa-hoc">Xem các khóa học</a></h3>
-				<h3><span class="circle mr-3">2</span><a href="/thong-tin-lien-lac">Đăng ký test đầu vào miễn phí</a></h3>
-				<h3><span class="circle mr-3">3</span><a href="/thong-tin-lien-lac">Liên hệ để tư vấn: 0903 674 268 hoặc 0903 88 25 25</a></h3>
-			</div>
-
+			<section class="pageContent">
+				<div class="tuyenSinhBox py-5">
+					<div class="tuyenSinhHeadings">
+						<h1>TUYỂN SINH THƯỜNG XUYÊN</h1>
+						<h3>ĐIỀN THÔNG TIN ĐĂNG KÝ ĐỂ NHẬN ƯU ĐÃI HẤP DẪN</h3>
+					</div>
+	
+					<div class="row" style="width: 90%; margin: 0 auto;">
+	
+						<div class="col-md-3 px-3 mb-3 text-center">
+							<p>*Vui lòng nhập thông tin vào để được bộ phận văn phòng liên lạc và tư vấn lớp phù hợp nhất.</p>
+							<button class="btn contactBtn my-2"><a href="/cac-khoa-hoc">XEM CÁC KHÓA HỌC</a></button>
+							<button class="btn contactBtn my-2"><a href="#mapContact">THÔNG TIN LIÊN LẠC</a></button>
+						</div>
+	
+						<div class="col-md-9 px-3">
+						
+						<form style="width: 90%; margin: 0 auto;" action="/" method="post" name="contact-form" id="contact-form" class="formContact">
+							<div class="row" >
+								<div class="col-7 pb-2">
+									<input type="text" class="form-control" id="tenHocVien" name="tenHocVien" placeholder="Tên Học Viên*" required>
+								</div>
+								<div class="col-5 pb-2">
+									<input type="date" class="form-control" id="namSinhHocVien" name="namSinhHocVien" placeholder="Ngày Tháng Năm Sinh*" required>
+									<p style="font-style: italic; font-size: smaller;">*Ngày Sinh Của Học Viên</p>
+								</div>
+								<div class="col-7 pb-2">
+									<input type="text" class="form-control" id="tenPhuHuynh" name="tenPhuHuynh" placeholder="Tên Phụ Huynh">
+								</div>
+								<div class="col-5 pb-2">
+									<input type="number" class="form-control" id="soDienThoai" name="soDienThoai" placeholder="Số Điện Thoại*" required>
+								</div>
+								<div class="col-12 pb-2">
+									<textarea style="white-space: pre-wrap;" class="form-control" id="noiDung" 
+									placeholder="Thông tin thêm về nhu cầu học/ Nội dung cần liên lạc..." name="noiDung"></textarea>
+								</div>
+							</div>
+								<div class="floatRight">
+									<p style="font-style: italic; font-size: smaller;">* Chúng tôi sẽ không chia sẻ thông tin của bạn cho bất kì tổ chức nào khác</p>
+									<button class="btn tuyenSinhBtn floatRight" type="submit" value="submit">GỬI THÔNG TIN</button>
+								</div>
+	
+							</form>
+	
+						</div>
+					</div>
+				</div>
+	
 		</section>
 
 	<hr class="mid-hori">

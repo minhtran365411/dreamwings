@@ -134,6 +134,18 @@ body {
 	width: 60%;
 }
 
+.searchBox {
+	border-top-right-radius: 0%;
+	border-bottom-right-radius: 0%;
+}
+
+.searchBtn {
+	background-color: #A0DB48;
+	color: white !important;
+	border-top-left-radius: 0%;
+	border-bottom-left-radius: 0%;
+}
+
 /*This is style for FOOTER*/
 
 footer {
@@ -522,6 +534,57 @@ background: #40404057;
     letter-spacing: 1px;
 }
 
+/* Tuyển sinh Box */
+
+.tuyenSinhBox {
+	background-color: #F8F4EE;
+}
+
+.tuyenSinhBox h1 {
+	font-weight: 1000;
+	letter-spacing: .05em;
+	color: #BB141A;
+}
+
+.tuyenSinhBox h3 {
+	margin-top: 1%;
+	font-weight: 600;
+	color: #042972;
+}
+
+.tuyenSinhHeadings {
+	margin-bottom: 3%;
+}
+
+.contactBtn {
+	border: 1px solid #042972;
+	color: #042972 !important;
+	background-color: white;
+	border-radius: 25px;
+}
+
+.contactBtn:hover {
+	color: white !important;
+	background-color: #042972 !important;
+}
+
+.floatRight {
+	float: right;
+}
+
+
+.tuyenSinhBtn {
+	background-color: #BB141A;
+	border: 1px solid #BB141A;
+	color: white;
+	border-radius: 25px;
+}
+
+.tuyenSinhBtn:hover {
+	background-color: #fff;
+	border: 1px solid #BB141A;
+	color: #BB141A;
+}
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 /* .flip-card {
@@ -604,7 +667,7 @@ background: #40404057;
 		display: block;
 	}
 
-.tuyensinh {
+/* .tuyensinh {
 	width: 80%;
 	border-radius: 15px; 
 	background-color: #cc0000;
@@ -626,7 +689,7 @@ background: #40404057;
 	color: black;
 	border-radius: 50%;
 	padding: 0 1.2%;
-}
+} */
 
 .lop-container {
 	width: 90%;
