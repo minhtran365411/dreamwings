@@ -1730,11 +1730,12 @@ div.card {
 
 		 .blogDate {
 			letter-spacing: .1rem;
-			font-size: 0.6rem;
+			font-size: 0.8rem !important;
 		 }
 
 		 .blogArticle {
-		 	font-size: 1.2rem;
+		 	font-size: 1.8rem;
+			font-weight: 800;
 		 }
 
 		 p.blogLead {
