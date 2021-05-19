@@ -3,40 +3,55 @@
 <!-- WALLPAPER -->
 	
 	
-	<header id="homeHead" ><img src="images/tintuc.jpg" size="100%"></header>
+<header id="homeHead" ><img src="images/light-header.jpg" size="100%"></header>
 	  
 	<!-- MAIN -->
-	<div class="container mt-4" style="margin-top: 3%; "  >
+	<div class="container-fluid paddingTop " style="margin-top: 3%; "  >
 			
-		<div class="text-left">
-			<a class="btn backBtn" href="/tintuc">VỀ TRANG TRƯỚC</a>
+		<div class="jumbotron jumbotron-fluid" style="position: relative;">
+			<div class="container" style="width: 60%;">
+			  <h1 class="display-4 blogArticle mt-3"><%= blog.title %></h1>
+			  <p class="lead blogDate"><%= moment(blog.createAt).format("dddd, MMMM Do YYYY") %></p>
+			</div>
+				
 		</div>
+		<div class="d-flex justify-content-center mt-3">	  
+			<img class="blogImage img-fluid " style="width: 70%;" src="<%= blog.imageURL %>">
+			
+		</div>
+		<div class="blogContentShow">
+			
+			<p><%= blog.text %></p>
+		</div>
+		  
 
-		
-
-	<div class="container blogContainer">
+	<!-- <div class="container blogContainer"> -->
       	
-      	<div class="blogPost pt-4 pb-3">
-			<h5 class="blogDate"><%= moment(blog.createAt).format("dddd, MMMM Do YYYY") %></h5>
-			<h1 class="blogArticle mt-3"><%= blog.title %></h1>
-			<p class="lead"><%= blog.lead %></p>
-			<img class="blogImage img-fluid mb-5" src="<%= blog.imageURL %>">
-			<div><p class="blogContent" style="white-space: pre-wrap;"><%= blog.text %></p></div>
-		</div>
+      
+			<!-- <h1 class="blogArticle mt-3"><%= blog.title %></h1>
+			<h5 class="blogDate"><%= moment(blog.createAt).format("dddd, MMMM Do YYYY") %></h5> -->
+			<!-- <p class="lead"><%= blog.lead %></p> -->
+			
+			<% if(currentUser){ %>
+				<div class="text-right" style="width: 80%;">
+					<a class="btn backBtn btn-success" href="/tintuc/<%= blog._id %>/edit"><i class="fas fa-edit mr-2"></i>SỬA BÀI VIẾT</a>
+					<form action="/tintuc/<%= blog._id %>?_method=DELETE" method="POST" style="display: inline-block;">
+						<button class="btn deleteBtn btn-danger" style="width: 120%;"><i class="fas fa-trash-alt mr-2"></i>XÓA BÀI VIẾT</button>
+					</form>
+				</div>
+			<% } %>
+			
+			<div class="d-flex justify-content-center " style="width: 50%;">
+				<a class="btn backBtn" href="/tintuc">VỀ TRANG TRƯỚC</a>
+			</div>
 
 		
-
 
 	</div>
 
-	<% if(currentUser){ %>
-		<div class="text-right my-5">
-			<a class="btn backBtn btn-success" href="/tintuc/<%= blog._id %>/edit"><i class="fas fa-edit mr-2"></i>SỬA BÀI VIẾT</a>
-			<form action="/tintuc/<%= blog._id %>?_method=DELETE" method="POST" style="display: inline-block;">
-				<button class="btn deleteBtn btn-danger" style="width: 120%;"><i class="fas fa-trash-alt mr-2"></i>XÓA BÀI VIẾT</button>
-			</form>
-		</div>
-	<% } %>
+	
+
+	
 
 	</div>
 

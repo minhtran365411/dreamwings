@@ -942,8 +942,17 @@ div.preview-images > img {
 	 }
 
  .blogContent {
- 	text-align: left;
+	text-align: left;
  }
+
+ .blogContentShow {
+	position: relative;
+	text-align: left;
+	white-space: pre-wrap; 
+	width: 60%; 
+	margin: 0 auto;
+}
+
 
  p.lead {
  	font-style: italic !important;
@@ -977,6 +986,12 @@ div.preview-images > img {
 	box-shadow: 0px 0px 20px #f8f5ec;
 	font-family: 'Roboto Mono', monospace;
 	padding: 1%;
+}
+
+/* new edit blog */
+
+.floatImg {
+	position: absolute;
 }
 
 .backBtn {
