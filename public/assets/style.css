@@ -994,6 +994,14 @@ div.preview-images > img {
 	position: absolute;
 }
 
+.blogImage {
+	width: 70%;
+	height: auto !important;
+	align-self: center !important;
+	margin: auto auto !important;
+	vertical-align: middle !important;
+}
+
 .backBtn {
 	background-color: #bde67f;
  	padding: 1%;
